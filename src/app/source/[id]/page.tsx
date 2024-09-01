@@ -10,6 +10,7 @@ import { SetActive } from "@/components/SetActive";
 import { filterNodes } from "@/util/filterNodes";
 import { generateSourceSQL } from "@/util/generateSourceSQL";
 import { MarkdownBlock } from "@/components/MarkdownBlock";
+import { GenerateDAG } from "@/components/GenerateDAG";
 
 export default async function SourcePage({
   params: { id },
@@ -70,6 +71,9 @@ export default async function SourcePage({
             <li>
               <a href="#code">SQL</a>
             </li>
+            <li>
+              <a href="#dag">Generate DAG Button</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -77,7 +81,7 @@ export default async function SourcePage({
         <div className="app-frame app-pad">
           <section className="section">
             <div className="section-target" id="details"></div>
-            <TableDetails model={model} extras={extra_table_fields} />
+            <TableDetails model={model} extras={extra_table_fields} />           
           </section>
 
           <section className="section">
@@ -126,6 +130,15 @@ export default async function SourcePage({
               />
             </div>
           </section>
+
+          <section className="section">
+            <div className="section-target" id="dag"></div>
+            <div className="section-content">
+              <h6>Graph</h6>
+              <GenerateDAG model={model} />
+            </div>
+          </section>
+
         </div>
       </div>
     </div>
