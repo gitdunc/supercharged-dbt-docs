@@ -72,7 +72,7 @@ export default async function SourcePage({
               <a href="#code">SQL</a>
             </li>
             <li>
-              <a href="#dag">Generate DAG Button</a>
+              <a href="#dag">DAG</a>
             </li>
           </ul>
         </div>
