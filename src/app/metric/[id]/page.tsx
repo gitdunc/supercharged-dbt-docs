@@ -108,7 +108,8 @@ export default async function MetricPage({
   );
 }
 
-export const revalidate = Infinity;
+// For static export compatibility set `revalidate` to a non-ISR value
+export const revalidate = false;
 
 export async function generateStaticParams() {
   return await filterNodes("metric");

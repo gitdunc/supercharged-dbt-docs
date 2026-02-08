@@ -10,6 +10,7 @@ import { getReferences, getParents } from "@/util/dagUtils";
 import { SetActive } from "@/components/SetActive";
 import { filterNodes } from "@/util/filterNodes";
 import { MarkdownBlock } from "@/components/MarkdownBlock";
+import { PersonaInlineFilters } from "@/components/PersonaInlineFilters";
 
 export default async function SnapshotPage({
   params: { id },
@@ -48,41 +49,64 @@ export default async function SnapshotPage({
             </h1>
           </div>
         </div>
-        <div className="app-frame app-pad-h">
-          <ul className="nav nav-tabs">
-            <li>
+        <div
+          className="app-frame app-pad-h"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: "12px",
+            flexWrap: "nowrap",
+            overflowX: "auto",
+          }}
+        >
+          <ul
+            className="nav nav-tabs"
+            style={{ flex: "1 1 auto", minWidth: 0, whiteSpace: "nowrap" }}
+          >
+            <li data-persona-key="details">
               <a href="#details">Details</a>
             </li>
-            <li>
+            <li data-persona-key="description">
               <a href="#description">Description</a>
             </li>
-            <li>
+            <li data-persona-key="columns">
               <a href="#columns">Columns</a>
             </li>
             {referencesLength ? (
-              <li>
+              <li data-persona-key="referenced_by">
                 <a href="#referenced_by">Referenced By</a>
               </li>
             ) : null}
             {parentsLength ? (
-              <li>
+              <li data-persona-key="depends_on">
                 <a href="#depends_on">Depends On</a>
               </li>
             ) : null}
-            <li>
+            <li data-persona-key="code">
               <a href="#code">SQL</a>
             </li>
+            <li data-persona-key="dag">
+              <a
+                href={`/dag/${encodeURIComponent(id)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                DAG
+              </a>
+            </li>
           </ul>
+          <PersonaInlineFilters />
         </div>
       </div>
       <div className="app-details">
         <div className="app-frame app-pad">
-          <section className="section">
+          <section className="section" data-persona-key="details">
             <div className="section-target" id="details"></div>
             <TableDetails model={model} />
           </section>
 
-          <section className="section">
+          <section className="section" data-persona-key="description">
             <div className="section-target" id="description"></div>
             <div className="section-content">
               <h6>Description</h6>
@@ -102,7 +126,7 @@ export default async function SnapshotPage({
             </div>
           </section>
 
-          <section className="section">
+          <section className="section" data-persona-key="columns">
             <div className="section-target" id="columns"></div>
             <div className="section-content">
               <h6>Columns</h6>
@@ -110,7 +134,7 @@ export default async function SnapshotPage({
             </div>
           </section>
           {referencesLength ? (
-            <section className="section">
+            <section className="section" data-persona-key="referenced_by">
               <div className="section-target" id="referenced_by"></div>
               <div className="section-content">
                 <h6>Referenced By</h6>
@@ -120,7 +144,7 @@ export default async function SnapshotPage({
           ) : null}
 
           {parentsLength ? (
-            <section className="section">
+            <section className="section" data-persona-key="depends_on">
               <div className="section-target" id="depends_on"></div>
               <div className="section-content">
                 <h6>Depends On</h6>
@@ -129,7 +153,7 @@ export default async function SnapshotPage({
             </section>
           ) : null}
 
-          <section className="section">
+          <section className="section" data-persona-key="code">
             <div className="section-target" id="code"></div>
             <div className="section-content">
               <CodeBlock

@@ -1,37 +1,38 @@
 import React, { Suspense } from "react";
+import { PersonaOverview } from "@/components/PersonaOverview";
 
 export default function Home() {
   return (
     <div className="app-details app-scroll app-pad">
       <div className="app-frame app-pad">
+        <PersonaOverview />
         <div className="panel panel-default">
           <div className="panel-body">
-            <p>
-              <h1 id="data-documentation-for-gitlab">
-                Data Documentation for GitLab
-              </h1>
+            <h1 id="featherweight-governance-tool">Featherweight Governance Tool</h1>
+            <div>
               <p>
-                All other documentation is in our handbook in the following
-                links:
+                Lightweight lineage and data-governance exploration for metadata artifacts.
+              </p>
+              <p>
+                Terminology: <strong>Data In Motion</strong> maps to <code>model</code>{" "}
+                resources and <strong>Landed Data</strong> maps to <code>seed</code>{" "}
+                resources.
               </p>
               <ul>
                 <li>
-                  <a href="https://about.gitlab.com/handbook/business-technology/data-team/platform/">
-                    Data Team Handbook
-                  </a>
+                  Open a model or source from the left tree to inspect lineage.
                 </li>
                 <li>
-                  <a href="https://about.gitlab.com/handbook/business-technology/data-team/platform/dbt-guide/">
-                    dbt Guide
-                  </a>
+                  Use the DAG view to apply filters for tags, reference data, and broad checks.
                 </li>
                 <li>
-                  <a href="https://about.gitlab.com/handbook/business-technology/data-team/platform/sql-style-guide/">
-                    SQL Style Guide
-                  </a>
+                  Compare current vs previous snapshots for schema, volume, and freshness deltas.
+                </li>
+                <li>
+                  See project documentation for schema references and compatibility guidance.
                 </li>
               </ul>
-            </p>
+            </div>
           </div>
         </div>
       </div>

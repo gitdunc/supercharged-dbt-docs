@@ -4,6 +4,7 @@ import React from "react";
 import _ from "underscore";
 import Link from "next/link";
 import { getNodeUrl } from "@/util/nodeUrl";
+import { getResourceTypeLabel } from "@/util/resourceLabels";
 
 export const ReferenceListClient = ({
   references,
@@ -25,7 +26,8 @@ export const ReferenceListClient = ({
     <div className="panel">
       {!hasReferences ? (
         <div className="panel-body">
-          No resources reference this {node.resource_type}
+          No resources reference this{" "}
+          {getResourceTypeLabel(node?.resource_type || "node")}
         </div>
       ) : (
         <div className="panel-body">
@@ -61,25 +63,5 @@ export const ReferenceListClient = ({
 };
 
 function mapResourceType(type: string) {
-  if (type == "model") {
-    return "Models";
-  } else if (type == "seed") {
-    return "Seeds";
-  } else if (type == "test") {
-    return "Tests";
-  } else if (type == "snapshot") {
-    return "Snapshots";
-  } else if (type == "analysis") {
-    return "Analyses";
-  } else if (type == "macro") {
-    return "Macros";
-  } else if (type == "exposure") {
-    return "Exposures";
-  } else if (type == "metric") {
-    return "Metrics";
-  } else if (type == "operation") {
-    return "Operations";
-  } else {
-    return "Nodes";
-  }
+  return getResourceTypeLabel(type, { plural: true });
 }

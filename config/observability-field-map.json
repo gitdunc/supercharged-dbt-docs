@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-02-07T00:00:00Z",
+  "artifacts": {
+    "manifest": {
+      "current_schema_url": "https://schemas.getdbt.com/dbt/manifest/v4.json",
+      "backup_schema_url": "https://schemas.getdbt.com/dbt/manifest/v6.json",
+      "notes": [
+        "Manifest v4/v6 support loaded_at_field and freshness on sources.",
+        "Node-level custom operational metadata should be placed under node.meta."
+      ],
+      "preferred_fields": {
+        "reference_table_flag": [
+          "nodes.<unique_id>.tags[]",
+          "nodes.<unique_id>.meta.reference_table",
+          "nodes.<unique_id>.meta.data_class"
+        ],
+        "graph_style": [
+          "if reference_table_flag then shape=hexagon"
+        ],
+        "freshness_config": [
+          "sources.<unique_id>.loaded_at_field",
+          "sources.<unique_id>.freshness.warn_after",
+          "sources.<unique_id>.freshness.error_after"
+        ],
+        "custom_recency_fallback": [
+          "nodes.<unique_id>.meta.last_updated_at",
+          "nodes.<unique_id>.meta.max_loaded_at",
+          "nodes.<unique_id>.meta.modified_at"
+        ],
+        "legacy_fallback": [
+          "nodes.<unique_id>.created_at"
+        ]
+      }
+    },
+    "catalog": {
+      "current_schema_url": "https://schemas.getdbt.com/dbt/catalog/v1.json",
+      "preferred_fields": {
+        "completeness_row_count": [
+          "nodes.<unique_id>.stats.num_rows.value",
+          "sources.<unique_id>.stats.num_rows.value"
+        ],
+        "schema_signature": [
+          "nodes.<unique_id>.columns",
+          "sources.<unique_id>.columns"
+        ],
+        "optional_recency_if_present": [
+          "nodes.<unique_id>.stats.max_loaded_at.value",
+          "nodes.<unique_id>.stats.last_modified.value",
+          "nodes.<unique_id>.stats.updated_at.value"
+        ]
+      }
+    },
+    "source_freshness": {
+      "schema_url": "https://schemas.getdbt.com/dbt/sources/v3.json",
+      "artifact_file": "sources.json",
+      "preferred_fields": {
+        "recency": [
+          "results[].max_loaded_at",
+          "results[].snapshotted_at",
+          "results[].max_loaded_at_time_ago_in_s"
+        ],
+        "status": [
+          "results[].status"
+        ]
+      }
+    }
+  },
+  "compatibility": {
+    "status": "compatible_with_guardrails",
+    "guardrails": [
+      "Compare schema drift using shared fields (columns/type) across manifest versions.",
+      "Treat missing recency as unknown, not pass.",
+      "Prefer sources.json for freshness when available."
+    ]
+  }
+}

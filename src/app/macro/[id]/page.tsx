@@ -49,9 +49,9 @@ export default async function MacroPage({
                 {macro.package_name}.{macro.name}
               </span>
               {macro.is_adapter_macro ? (
-                <small>adapter macro</small>
+                <small>adapter routine</small>
               ) : (
-                <small>macro</small>
+                <small>routine</small>
               )}
             </h1>
           </div>
@@ -94,7 +94,7 @@ export default async function MacroPage({
                     </div>
                   ) : (
                     <div>
-                      This {macro.resource_type} is not currently documented
+                      This routine is not currently documented
                     </div>
                   )}
                 </div>

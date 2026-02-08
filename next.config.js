@@ -1,16 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  output: "export",
-  trailingSlash: true,
-  skipTrailingSlashRedirect: true,
-  distDir: "dist/supercharged",
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+﻿module.exports = {
+    reactStrictMode: true,
+    output: 'standalone',
+    // Enable server-side rendering and API routes
+    // Enables dynamic DAG computation at runtime instead of static pre-generation
+    experimental: {
+      serverActions: {
+        allowedOrigins: ['localhost:3000', 'localhost:3001', '127.0.0.1'],
+      },
+    },
 };
-
-module.exports = nextConfig;

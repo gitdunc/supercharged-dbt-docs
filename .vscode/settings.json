@@ -1,0 +1,16 @@
+{
+    // Treat our SQL generator files as MySQL so the editor uses MySQL syntax/diagnostics
+    "files.associations": {
+        "scripts/sql-generators/*.sql": "mysql",
+        "**/scripts/sql-generators/*.sql": "mysql"
+    },
+
+    // Keep existing settings for chat tools (preserve previous content)
+    "chat.tools.terminal.autoApprove": {
+        "ssr:": true,
+        "fs.writeFileSync(p,": true,
+        "console.log('patched',": true
+    },
+    // Map the external Azure SQL file to generic SQL to avoid T-SQL/MySQL mismatches
+    "Azure_loves_dbtDocs_v12.sql": "sql"
+}

@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import { getNodeUrl } from "@/util/nodeUrl";
+import { getResourceTypeLabel } from "@/util/resourceLabels";
 
 function fuzzySearchObj(query: string, obj: any) {
   var objects = [];
@@ -429,7 +430,9 @@ export function SearchResults({
                                     : getModelName(result.model),
                                 }}
                               />
-                              <small>{result.model.resource_type}</small>
+                              <small>
+                                {getResourceTypeLabel(result.model.resource_type)}
+                              </small>
                             </h4>
                             <p
                               dangerouslySetInnerHTML={{

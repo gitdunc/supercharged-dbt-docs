@@ -109,7 +109,7 @@ export function ModelTreeClient() {
             <li>
               <div className="menu">
                 <TreeSection
-                  title="Sources"
+                  title="Source Data"
                   elements={tree.sources}
                   resourceType="source"
                   setActive={setActive}
@@ -127,7 +127,7 @@ export function ModelTreeClient() {
                   setActive={setActive}
                 />
                 <TreeSection
-                  title="Projects"
+                  title="Data In Motion"
                   elements={tree.project}
                   resourceType="model"
                   setActive={setActive}
@@ -217,8 +217,10 @@ const ModelTreeLine = ({
   setActive: (uniqueId: string) => void;
 }) => {
   const name = item.name;
-  const end = _.last(name, 15).join("");
-  const start = _.initial(name, end.length).join("");
+  const displayName =
+    item.type === "folder" ? aliasTreeFolderName(String(name)) : String(name);
+  const end = _.last(displayName, 15).join("");
+  const start = _.initial(displayName, end.length).join("");
 
   const [isOpen, setIsOpen] = React.useState(false);
   React.useEffect(() => {
@@ -248,7 +250,7 @@ const ModelTreeLine = ({
               setActive(item.unique_id);
             }}
             data-nav-unique-id={item.unique_id}
-            title={name}
+            title={displayName}
           >
             <span className="filename">
               <span className="filename-normal">
@@ -344,6 +346,15 @@ function getIcon(type: keyof typeof icons, onOff: "on" | "off") {
   };
 
   return "#" + icons[type][onOff];
+}
+
+function aliasTreeFolderName(name: string): string {
+  const normalized = name.toLowerCase();
+  if (normalized === "models") return "Data In Motion (Activity)";
+  if (normalized === "snapshots") return "Data In Motion (Snapshot)";
+  if (normalized === "seeds") return "Landed Data";
+  if (normalized === "macros") return "Routines";
+  return name;
 }
 
 function updateSelectedInTree(uniqueId: string, subtrees: any) {

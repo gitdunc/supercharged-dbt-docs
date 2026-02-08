@@ -6,7 +6,6 @@ import Logo from "@/svgs/logo";
 import Glyphs from "@/svgs/glyphs";
 import { loadProject } from "./projectService";
 import React, { Suspense } from "react";
-import _ from "underscore";
 import { GraphLauncher } from "@/components/GraphLauncher";
 import { ModelTree } from "@/components/ModelTree";
 import { SearchBar } from "@/components/SearchBar";
@@ -15,8 +14,8 @@ import Spinner from "@/components/Spinner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Modern DBT Docs",
-  description: "built using React Server Components",
+  title: "Featherweight",
+  description: "Featherweight Governance Tool",
 };
 
 loadProject();
@@ -67,7 +66,7 @@ export default async function RootLayout({
   );
 }
 
-export const SearchWrapper = ({ children }: { children: React.ReactNode }) => {
+const SearchWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="app-content app-column">
       <div className="app-header app-navbar app-shadow">

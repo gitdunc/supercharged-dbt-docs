@@ -1,0 +1,5160 @@
+{
+  "metadata": {
+    "dbt_schema_version": "https://schemas.getdbt.com/dbt/catalog/v1.json",
+    "dbt_version": "1.0.4",
+    "generated_at": "2026-02-05T08:00:00.000Z",
+    "invocation_id": "bd5847c0-e0ea-48b0-aae9-1356e06cd78a",
+    "env": {}
+  },
+  "nodes": {
+    "seed.AdventureWorks2017.Department": {
+      "metadata": {
+        "type": "table",
+        "schema": "HumanResources",
+        "name": "Department",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "DepartmentID": {
+          "type": "smallint",
+          "index": "1",
+          "name": "DepartmentID",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "Name",
+          "comment": null
+        },
+        "GroupName": {
+          "type": "nvarchar",
+          "index": "3",
+          "name": "GroupName",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "4",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "16",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.Department"
+    },
+    "model.AdventureWorks2017.Employee": {
+      "metadata": {
+        "type": "table",
+        "schema": "HumanResources",
+        "name": "Employee",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "BusinessEntityID": {
+          "type": "int",
+          "index": "1",
+          "name": "BusinessEntityID",
+          "comment": null
+        },
+        "NationalIDNumber": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "NationalIDNumber",
+          "comment": null
+        },
+        "LoginID": {
+          "type": "nvarchar",
+          "index": "3",
+          "name": "LoginID",
+          "comment": null
+        },
+        "OrganizationNode": {
+          "type": "hierarchyid",
+          "index": "4",
+          "name": "OrganizationNode",
+          "comment": null
+        },
+        "OrganizationLevel": {
+          "type": "smallint",
+          "index": "5",
+          "name": "OrganizationLevel",
+          "comment": null
+        },
+        "JobTitle": {
+          "type": "nvarchar",
+          "index": "6",
+          "name": "JobTitle",
+          "comment": null
+        },
+        "BirthDate": {
+          "type": "date",
+          "index": "7",
+          "name": "BirthDate",
+          "comment": null
+        },
+        "MaritalStatus": {
+          "type": "nchar",
+          "index": "8",
+          "name": "MaritalStatus",
+          "comment": null
+        },
+        "Gender": {
+          "type": "nchar",
+          "index": "9",
+          "name": "Gender",
+          "comment": null
+        },
+        "HireDate": {
+          "type": "date",
+          "index": "10",
+          "name": "HireDate",
+          "comment": null
+        },
+        "SalariedFlag": {
+          "type": "bit",
+          "index": "11",
+          "name": "SalariedFlag",
+          "comment": null
+        },
+        "VacationHours": {
+          "type": "smallint",
+          "index": "12",
+          "name": "VacationHours",
+          "comment": null
+        },
+        "SickLeaveHours": {
+          "type": "smallint",
+          "index": "13",
+          "name": "SickLeaveHours",
+          "comment": null
+        },
+        "CurrentFlag": {
+          "type": "bit",
+          "index": "14",
+          "name": "CurrentFlag",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "15",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "16",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "294",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 72,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.Employee"
+    },
+    "model.AdventureWorks2017.EmployeeDepartmentHistory": {
+      "metadata": {
+        "type": "table",
+        "schema": "HumanResources",
+        "name": "EmployeeDepartmentHistory",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "BusinessEntityID": {
+          "type": "int",
+          "index": "1",
+          "name": "BusinessEntityID",
+          "comment": null
+        },
+        "DepartmentID": {
+          "type": "smallint",
+          "index": "2",
+          "name": "DepartmentID",
+          "comment": null
+        },
+        "ShiftID": {
+          "type": "tinyint",
+          "index": "3",
+          "name": "ShiftID",
+          "comment": null
+        },
+        "StartDate": {
+          "type": "date",
+          "index": "4",
+          "name": "StartDate",
+          "comment": null
+        },
+        "EndDate": {
+          "type": "date",
+          "index": "5",
+          "name": "EndDate",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "6",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "300",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 32,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.EmployeeDepartmentHistory"
+    },
+    "model.AdventureWorks2017.EmployeePayHistory": {
+      "metadata": {
+        "type": "table",
+        "schema": "HumanResources",
+        "name": "EmployeePayHistory",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "BusinessEntityID": {
+          "type": "int",
+          "index": "1",
+          "name": "BusinessEntityID",
+          "comment": null
+        },
+        "RateChangeDate": {
+          "type": "datetime",
+          "index": "2",
+          "name": "RateChangeDate",
+          "comment": null
+        },
+        "Rate": {
+          "type": "money",
+          "index": "3",
+          "name": "Rate",
+          "comment": null
+        },
+        "PayFrequency": {
+          "type": "tinyint",
+          "index": "4",
+          "name": "PayFrequency",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "5",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "320",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 32,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.EmployeePayHistory"
+    },
+    "model.AdventureWorks2017.JobCandidate": {
+      "metadata": {
+        "type": "table",
+        "schema": "HumanResources",
+        "name": "JobCandidate",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "JobCandidateID": {
+          "type": "int",
+          "index": "1",
+          "name": "JobCandidateID",
+          "comment": null
+        },
+        "BusinessEntityID": {
+          "type": "int",
+          "index": "2",
+          "name": "BusinessEntityID",
+          "comment": null
+        },
+        "Resume": {
+          "type": "xml",
+          "index": "3",
+          "name": "Resume",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "4",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "14",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 144,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.JobCandidate"
+    },
+    "seed.AdventureWorks2017.Shift": {
+      "metadata": {
+        "type": "table",
+        "schema": "HumanResources",
+        "name": "Shift",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "ShiftID": {
+          "type": "tinyint",
+          "index": "1",
+          "name": "ShiftID",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "Name",
+          "comment": null
+        },
+        "StartTime": {
+          "type": "time",
+          "index": "3",
+          "name": "StartTime",
+          "comment": null
+        },
+        "EndTime": {
+          "type": "time",
+          "index": "4",
+          "name": "EndTime",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "5",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "3",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.Shift"
+    },
+    "model.AdventureWorks2017.Address": {
+      "metadata": {
+        "type": "table",
+        "schema": "Person",
+        "name": "Address",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "AddressID": {
+          "type": "int",
+          "index": "1",
+          "name": "AddressID",
+          "comment": null
+        },
+        "AddressLine1": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "AddressLine1",
+          "comment": null
+        },
+        "AddressLine2": {
+          "type": "nvarchar",
+          "index": "3",
+          "name": "AddressLine2",
+          "comment": null
+        },
+        "City": {
+          "type": "nvarchar",
+          "index": "4",
+          "name": "City",
+          "comment": null
+        },
+        "StateProvinceID": {
+          "type": "int",
+          "index": "5",
+          "name": "StateProvinceID",
+          "comment": null
+        },
+        "PostalCode": {
+          "type": "nvarchar",
+          "index": "6",
+          "name": "PostalCode",
+          "comment": null
+        },
+        "SpatialLocation": {
+          "type": "geography",
+          "index": "7",
+          "name": "SpatialLocation",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "8",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "9",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "19859",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 2864,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.Address"
+    },
+    "seed.AdventureWorks2017.AddressType": {
+      "metadata": {
+        "type": "table",
+        "schema": "Person",
+        "name": "AddressType",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "AddressTypeID": {
+          "type": "int",
+          "index": "1",
+          "name": "AddressTypeID",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "Name",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "3",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "4",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "6",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.AddressType"
+    },
+    "seed.AdventureWorks2017.BusinessEntity": {
+      "metadata": {
+        "type": "table",
+        "schema": "Person",
+        "name": "BusinessEntity",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "BusinessEntityID": {
+          "type": "int",
+          "index": "1",
+          "name": "BusinessEntityID",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "2",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "3",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "20777",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 784,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.BusinessEntity"
+    },
+    "model.AdventureWorks2017.BusinessEntityAddress": {
+      "metadata": {
+        "type": "table",
+        "schema": "Person",
+        "name": "BusinessEntityAddress",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "BusinessEntityID": {
+          "type": "int",
+          "index": "1",
+          "name": "BusinessEntityID",
+          "comment": null
+        },
+        "AddressID": {
+          "type": "int",
+          "index": "2",
+          "name": "AddressID",
+          "comment": null
+        },
+        "AddressTypeID": {
+          "type": "int",
+          "index": "3",
+          "name": "AddressTypeID",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "4",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "5",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "19859",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 896,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.BusinessEntityAddress"
+    },
+    "model.AdventureWorks2017.BusinessEntityContact": {
+      "metadata": {
+        "type": "table",
+        "schema": "Person",
+        "name": "BusinessEntityContact",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "BusinessEntityID": {
+          "type": "int",
+          "index": "1",
+          "name": "BusinessEntityID",
+          "comment": null
+        },
+        "PersonID": {
+          "type": "int",
+          "index": "2",
+          "name": "PersonID",
+          "comment": null
+        },
+        "ContactTypeID": {
+          "type": "int",
+          "index": "3",
+          "name": "ContactTypeID",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "4",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "5",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "920",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 64,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.BusinessEntityContact"
+    },
+    "seed.AdventureWorks2017.ContactType": {
+      "metadata": {
+        "type": "table",
+        "schema": "Person",
+        "name": "ContactType",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "ContactTypeID": {
+          "type": "int",
+          "index": "1",
+          "name": "ContactTypeID",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "Name",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "3",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "20",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.ContactType"
+    },
+    "seed.AdventureWorks2017.CountryRegion": {
+      "metadata": {
+        "type": "table",
+        "schema": "Person",
+        "name": "CountryRegion",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "CountryRegionCode": {
+          "type": "nvarchar",
+          "index": "1",
+          "name": "CountryRegionCode",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "Name",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "3",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "238",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 32,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.CountryRegion"
+    },
+    "model.AdventureWorks2017.EmailAddress": {
+      "metadata": {
+        "type": "table",
+        "schema": "Person",
+        "name": "EmailAddress",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "BusinessEntityID": {
+          "type": "int",
+          "index": "1",
+          "name": "BusinessEntityID",
+          "comment": null
+        },
+        "EmailAddressID": {
+          "type": "int",
+          "index": "2",
+          "name": "EmailAddressID",
+          "comment": null
+        },
+        "EmailAddress": {
+          "type": "nvarchar",
+          "index": "3",
+          "name": "EmailAddress",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "4",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "5",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "20222",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 2008,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.EmailAddress"
+    },
+    "model.AdventureWorks2017.Password": {
+      "metadata": {
+        "type": "table",
+        "schema": "Person",
+        "name": "Password",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "BusinessEntityID": {
+          "type": "int",
+          "index": "1",
+          "name": "BusinessEntityID",
+          "comment": null
+        },
+        "PasswordHash": {
+          "type": "varchar",
+          "index": "2",
+          "name": "PasswordHash",
+          "comment": null
+        },
+        "PasswordSalt": {
+          "type": "varchar",
+          "index": "3",
+          "name": "PasswordSalt",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "4",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "5",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "19972",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 1896,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.Password"
+    },
+    "model.AdventureWorks2017.Person": {
+      "metadata": {
+        "type": "table",
+        "schema": "Person",
+        "name": "Person",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "BusinessEntityID": {
+          "type": "int",
+          "index": "1",
+          "name": "BusinessEntityID",
+          "comment": null
+        },
+        "PersonType": {
+          "type": "nchar",
+          "index": "2",
+          "name": "PersonType",
+          "comment": null
+        },
+        "NameStyle": {
+          "type": "bit",
+          "index": "3",
+          "name": "NameStyle",
+          "comment": null
+        },
+        "Title": {
+          "type": "nvarchar",
+          "index": "4",
+          "name": "Title",
+          "comment": null
+        },
+        "FirstName": {
+          "type": "nvarchar",
+          "index": "5",
+          "name": "FirstName",
+          "comment": null
+        },
+        "MiddleName": {
+          "type": "nvarchar",
+          "index": "6",
+          "name": "MiddleName",
+          "comment": null
+        },
+        "LastName": {
+          "type": "nvarchar",
+          "index": "7",
+          "name": "LastName",
+          "comment": null
+        },
+        "Suffix": {
+          "type": "nvarchar",
+          "index": "8",
+          "name": "Suffix",
+          "comment": null
+        },
+        "EmailPromotion": {
+          "type": "int",
+          "index": "9",
+          "name": "EmailPromotion",
+          "comment": null
+        },
+        "AdditionalContactInfo": {
+          "type": "xml",
+          "index": "10",
+          "name": "AdditionalContactInfo",
+          "comment": null
+        },
+        "Demographics": {
+          "type": "xml",
+          "index": "11",
+          "name": "Demographics",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "12",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "13",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "19972",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 30664,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.Person"
+    },
+    "model.AdventureWorks2017.PersonPhone": {
+      "metadata": {
+        "type": "table",
+        "schema": "Person",
+        "name": "PersonPhone",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "BusinessEntityID": {
+          "type": "int",
+          "index": "1",
+          "name": "BusinessEntityID",
+          "comment": null
+        },
+        "PhoneNumber": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "PhoneNumber",
+          "comment": null
+        },
+        "PhoneNumberTypeID": {
+          "type": "int",
+          "index": "3",
+          "name": "PhoneNumberTypeID",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "4",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "19972",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 1200,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.PersonPhone"
+    },
+    "seed.AdventureWorks2017.PhoneNumberType": {
+      "metadata": {
+        "type": "table",
+        "schema": "Person",
+        "name": "PhoneNumberType",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "PhoneNumberTypeID": {
+          "type": "int",
+          "index": "1",
+          "name": "PhoneNumberTypeID",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "Name",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "3",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "3",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.PhoneNumberType"
+    },
+    "model.AdventureWorks2017.StateProvince": {
+      "metadata": {
+        "type": "table",
+        "schema": "Person",
+        "name": "StateProvince",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "StateProvinceID": {
+          "type": "int",
+          "index": "1",
+          "name": "StateProvinceID",
+          "comment": null
+        },
+        "StateProvinceCode": {
+          "type": "nchar",
+          "index": "2",
+          "name": "StateProvinceCode",
+          "comment": null
+        },
+        "CountryRegionCode": {
+          "type": "nvarchar",
+          "index": "3",
+          "name": "CountryRegionCode",
+          "comment": null
+        },
+        "IsOnlyStateProvinceFlag": {
+          "type": "bit",
+          "index": "4",
+          "name": "IsOnlyStateProvinceFlag",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "5",
+          "name": "Name",
+          "comment": null
+        },
+        "TerritoryID": {
+          "type": "int",
+          "index": "6",
+          "name": "TerritoryID",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "7",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "8",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "182",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 32,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.StateProvince"
+    },
+    "model.AdventureWorks2017.BillOfMaterials": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "BillOfMaterials",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "BillOfMaterialsID": {
+          "type": "int",
+          "index": "1",
+          "name": "BillOfMaterialsID",
+          "comment": null
+        },
+        "ProductAssemblyID": {
+          "type": "int",
+          "index": "2",
+          "name": "ProductAssemblyID",
+          "comment": null
+        },
+        "ComponentID": {
+          "type": "int",
+          "index": "3",
+          "name": "ComponentID",
+          "comment": null
+        },
+        "StartDate": {
+          "type": "datetime",
+          "index": "4",
+          "name": "StartDate",
+          "comment": null
+        },
+        "EndDate": {
+          "type": "datetime",
+          "index": "5",
+          "name": "EndDate",
+          "comment": null
+        },
+        "UnitMeasureCode": {
+          "type": "nchar",
+          "index": "6",
+          "name": "UnitMeasureCode",
+          "comment": null
+        },
+        "BOMLevel": {
+          "type": "smallint",
+          "index": "7",
+          "name": "BOMLevel",
+          "comment": null
+        },
+        "PerAssemblyQty": {
+          "type": "decimal",
+          "index": "8",
+          "name": "PerAssemblyQty",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "VARCHAR",
+          "index": "9",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "2712",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 176,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.BillOfMaterials"
+    },
+    "seed.AdventureWorks2017.Culture": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "Culture",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "CultureID": {
+          "type": "nchar",
+          "index": "1",
+          "name": "CultureID",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "Name",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "3",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "8",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.Culture"
+    },
+    "model.AdventureWorks2017.Document": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "Document",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "DocumentNode": {
+          "type": "hierarchyid",
+          "index": "1",
+          "name": "DocumentNode",
+          "comment": null
+        },
+        "DocumentLevel": {
+          "type": "smallint",
+          "index": "2",
+          "name": "DocumentLevel",
+          "comment": null
+        },
+        "Title": {
+          "type": "nvarchar",
+          "index": "3",
+          "name": "Title",
+          "comment": null
+        },
+        "Owner": {
+          "type": "int",
+          "index": "4",
+          "name": "Owner",
+          "comment": null
+        },
+        "FolderFlag": {
+          "type": "bit",
+          "index": "5",
+          "name": "FolderFlag",
+          "comment": null
+        },
+        "FileName": {
+          "type": "nvarchar",
+          "index": "6",
+          "name": "FileName",
+          "comment": null
+        },
+        "FileExtension": {
+          "type": "nvarchar",
+          "index": "7",
+          "name": "FileExtension",
+          "comment": null
+        },
+        "Revision": {
+          "type": "nchar",
+          "index": "8",
+          "name": "Revision",
+          "comment": null
+        },
+        "ChangeNumber": {
+          "type": "int",
+          "index": "9",
+          "name": "ChangeNumber",
+          "comment": null
+        },
+        "Status": {
+          "type": "tinyint",
+          "index": "10",
+          "name": "Status",
+          "comment": null
+        },
+        "DocumentSummary": {
+          "type": "nvarchar",
+          "index": "11",
+          "name": "DocumentSummary",
+          "comment": null
+        },
+        "Document": {
+          "type": "varbinary",
+          "index": "12",
+          "name": "Document",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "13",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "14",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "14",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 344,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.Document"
+    },
+    "seed.AdventureWorks2017.Illustration": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "Illustration",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "IllustrationID": {
+          "type": "int",
+          "index": "1",
+          "name": "IllustrationID",
+          "comment": null
+        },
+        "Diagram": {
+          "type": "xml",
+          "index": "2",
+          "name": "Diagram",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "3",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "5",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 248,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.Illustration"
+    },
+    "seed.AdventureWorks2017.Location": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "Location",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "LocationID": {
+          "type": "smallint",
+          "index": "1",
+          "name": "LocationID",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "Name",
+          "comment": null
+        },
+        "CostRate": {
+          "type": "smallmoney",
+          "index": "3",
+          "name": "CostRate",
+          "comment": null
+        },
+        "Availability": {
+          "type": "decimal",
+          "index": "4",
+          "name": "Availability",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "5",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "14",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.Location"
+    },
+    "model.AdventureWorks2017.Product": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "Product",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "ProductID": {
+          "type": "int",
+          "index": "1",
+          "name": "ProductID",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "Name",
+          "comment": null
+        },
+        "ProductNumber": {
+          "type": "nvarchar",
+          "index": "3",
+          "name": "ProductNumber",
+          "comment": null
+        },
+        "MakeFlag": {
+          "type": "bit",
+          "index": "4",
+          "name": "MakeFlag",
+          "comment": null
+        },
+        "FinishedGoodsFlag": {
+          "type": "bit",
+          "index": "5",
+          "name": "FinishedGoodsFlag",
+          "comment": null
+        },
+        "Color": {
+          "type": "nvarchar",
+          "index": "6",
+          "name": "Color",
+          "comment": null
+        },
+        "SafetyStockLevel": {
+          "type": "smallint",
+          "index": "7",
+          "name": "SafetyStockLevel",
+          "comment": null
+        },
+        "ReorderPoint": {
+          "type": "smallint",
+          "index": "8",
+          "name": "ReorderPoint",
+          "comment": null
+        },
+        "StandardCost": {
+          "type": "money",
+          "index": "9",
+          "name": "StandardCost",
+          "comment": null
+        },
+        "ListPrice": {
+          "type": "money",
+          "index": "10",
+          "name": "ListPrice",
+          "comment": null
+        },
+        "Size": {
+          "type": "nvarchar",
+          "index": "11",
+          "name": "Size",
+          "comment": null
+        },
+        "SizeUnitMeasureCode": {
+          "type": "nchar",
+          "index": "12",
+          "name": "SizeUnitMeasureCode",
+          "comment": null
+        },
+        "WeightUnitMeasureCode": {
+          "type": "nchar",
+          "index": "13",
+          "name": "WeightUnitMeasureCode",
+          "comment": null
+        },
+        "Weight": {
+          "type": "decimal",
+          "index": "14",
+          "name": "Weight",
+          "comment": null
+        },
+        "DaysToManufacture": {
+          "type": "int",
+          "index": "15",
+          "name": "DaysToManufacture",
+          "comment": null
+        },
+        "ProductLine": {
+          "type": "nchar",
+          "index": "16",
+          "name": "ProductLine",
+          "comment": null
+        },
+        "Class": {
+          "type": "nchar",
+          "index": "17",
+          "name": "Class",
+          "comment": null
+        },
+        "Style": {
+          "type": "nchar",
+          "index": "18",
+          "name": "Style",
+          "comment": null
+        },
+        "ProductSubcategoryID": {
+          "type": "int",
+          "index": "19",
+          "name": "ProductSubcategoryID",
+          "comment": null
+        },
+        "ProductModelID": {
+          "type": "int",
+          "index": "20",
+          "name": "ProductModelID",
+          "comment": null
+        },
+        "SellStartDate": {
+          "type": "datetime",
+          "index": "21",
+          "name": "SellStartDate",
+          "comment": null
+        },
+        "SellEndDate": {
+          "type": "datetime",
+          "index": "22",
+          "name": "SellEndDate",
+          "comment": null
+        },
+        "DiscontinuedDate": {
+          "type": "datetime",
+          "index": "23",
+          "name": "DiscontinuedDate",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "24",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "25",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "504",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 120,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.Product"
+    },
+    "seed.AdventureWorks2017.ProductCategory": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "ProductCategory",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "ProductCategoryID": {
+          "type": "int",
+          "index": "1",
+          "name": "ProductCategoryID",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "Name",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "3",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "4",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "4",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.ProductCategory"
+    },
+    "model.AdventureWorks2017.ProductCostHistory": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "ProductCostHistory",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "ProductID": {
+          "type": "int",
+          "index": "1",
+          "name": "ProductID",
+          "comment": null
+        },
+        "StartDate": {
+          "type": "datetime",
+          "index": "2",
+          "name": "StartDate",
+          "comment": null
+        },
+        "EndDate": {
+          "type": "datetime",
+          "index": "3",
+          "name": "EndDate",
+          "comment": null
+        },
+        "StandardCost": {
+          "type": "money",
+          "index": "4",
+          "name": "StandardCost",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "5",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "395",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 40,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.ProductCostHistory"
+    },
+    "seed.AdventureWorks2017.ProductDescription": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "ProductDescription",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "ProductDescriptionID": {
+          "type": "int",
+          "index": "1",
+          "name": "ProductDescriptionID",
+          "comment": null
+        },
+        "Description": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "Description",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "3",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "4",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "762",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 160,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.ProductDescription"
+    },
+    "model.AdventureWorks2017.ProductDocument": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "ProductDocument",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "ProductID": {
+          "type": "int",
+          "index": "1",
+          "name": "ProductID",
+          "comment": null
+        },
+        "DocumentNode": {
+          "type": "hierarchyid",
+          "index": "2",
+          "name": "DocumentNode",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "3",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "32",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.ProductDocument"
+    },
+    "model.AdventureWorks2017.ProductInventory": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "ProductInventory",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "ProductID": {
+          "type": "int",
+          "index": "1",
+          "name": "ProductID",
+          "comment": null
+        },
+        "LocationID": {
+          "type": "smallint",
+          "index": "2",
+          "name": "LocationID",
+          "comment": null
+        },
+        "Shelf": {
+          "type": "nvarchar",
+          "index": "3",
+          "name": "Shelf",
+          "comment": null
+        },
+        "Bin": {
+          "type": "tinyint",
+          "index": "4",
+          "name": "Bin",
+          "comment": null
+        },
+        "Quantity": {
+          "type": "smallint",
+          "index": "5",
+          "name": "Quantity",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "6",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "7",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "1069",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 72,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.ProductInventory"
+    },
+    "model.AdventureWorks2017.ProductListPriceHistory": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "ProductListPriceHistory",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "ProductID": {
+          "type": "int",
+          "index": "1",
+          "name": "ProductID",
+          "comment": null
+        },
+        "StartDate": {
+          "type": "datetime",
+          "index": "2",
+          "name": "StartDate",
+          "comment": null
+        },
+        "EndDate": {
+          "type": "datetime",
+          "index": "3",
+          "name": "EndDate",
+          "comment": null
+        },
+        "ListPrice": {
+          "type": "money",
+          "index": "4",
+          "name": "ListPrice",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "5",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "395",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 40,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.ProductListPriceHistory"
+    },
+    "seed.AdventureWorks2017.ProductModel": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "ProductModel",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "ProductModelID": {
+          "type": "int",
+          "index": "1",
+          "name": "ProductModelID",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "Name",
+          "comment": null
+        },
+        "CatalogDescription": {
+          "type": "xml",
+          "index": "3",
+          "name": "CatalogDescription",
+          "comment": null
+        },
+        "Instructions": {
+          "type": "xml",
+          "index": "4",
+          "name": "Instructions",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "5",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "6",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "128",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 160,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.ProductModel"
+    },
+    "model.AdventureWorks2017.ProductModelIllustration": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "ProductModelIllustration",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "ProductModelID": {
+          "type": "int",
+          "index": "1",
+          "name": "ProductModelID",
+          "comment": null
+        },
+        "IllustrationID": {
+          "type": "int",
+          "index": "2",
+          "name": "IllustrationID",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "3",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "7",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.ProductModelIllustration"
+    },
+    "model.AdventureWorks2017.ProductModelProductDescriptionCulture": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "ProductModelProductDescriptionCulture",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "ProductModelID": {
+          "type": "int",
+          "index": "1",
+          "name": "ProductModelID",
+          "comment": null
+        },
+        "ProductDescriptionID": {
+          "type": "int",
+          "index": "2",
+          "name": "ProductDescriptionID",
+          "comment": null
+        },
+        "CultureID": {
+          "type": "nchar",
+          "index": "3",
+          "name": "CultureID",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "4",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "762",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 48,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.ProductModelProductDescriptionCulture"
+    },
+    "seed.AdventureWorks2017.ProductPhoto": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "ProductPhoto",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "ProductPhotoID": {
+          "type": "int",
+          "index": "1",
+          "name": "ProductPhotoID",
+          "comment": null
+        },
+        "ThumbNailPhoto": {
+          "type": "varbinary",
+          "index": "2",
+          "name": "ThumbNailPhoto",
+          "comment": null
+        },
+        "ThumbnailPhotoFileName": {
+          "type": "nvarchar",
+          "index": "3",
+          "name": "ThumbnailPhotoFileName",
+          "comment": null
+        },
+        "LargePhoto": {
+          "type": "varbinary",
+          "index": "4",
+          "name": "LargePhoto",
+          "comment": null
+        },
+        "LargePhotoFileName": {
+          "type": "nvarchar",
+          "index": "5",
+          "name": "LargePhotoFileName",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "6",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "101",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 2296,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.ProductPhoto"
+    },
+    "model.AdventureWorks2017.ProductProductPhoto": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "ProductProductPhoto",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "ProductID": {
+          "type": "int",
+          "index": "1",
+          "name": "ProductID",
+          "comment": null
+        },
+        "ProductPhotoID": {
+          "type": "int",
+          "index": "2",
+          "name": "ProductPhotoID",
+          "comment": null
+        },
+        "Primary": {
+          "type": "bit",
+          "index": "3",
+          "name": "Primary",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "4",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "504",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 24,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.ProductProductPhoto"
+    },
+    "model.AdventureWorks2017.ProductReview": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "ProductReview",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "ProductReviewID": {
+          "type": "int",
+          "index": "1",
+          "name": "ProductReviewID",
+          "comment": null
+        },
+        "ProductID": {
+          "type": "int",
+          "index": "2",
+          "name": "ProductID",
+          "comment": null
+        },
+        "ReviewerName": {
+          "type": "nvarchar",
+          "index": "3",
+          "name": "ReviewerName",
+          "comment": null
+        },
+        "ReviewDate": {
+          "type": "datetime",
+          "index": "4",
+          "name": "ReviewDate",
+          "comment": null
+        },
+        "EmailAddress": {
+          "type": "nvarchar",
+          "index": "5",
+          "name": "EmailAddress",
+          "comment": null
+        },
+        "Rating": {
+          "type": "int",
+          "index": "6",
+          "name": "Rating",
+          "comment": null
+        },
+        "Comments": {
+          "type": "nvarchar",
+          "index": "7",
+          "name": "Comments",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "8",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "4",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 32,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.ProductReview"
+    },
+    "model.AdventureWorks2017.ProductSubcategory": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "ProductSubcategory",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "ProductSubcategoryID": {
+          "type": "int",
+          "index": "1",
+          "name": "ProductSubcategoryID",
+          "comment": null
+        },
+        "ProductCategoryID": {
+          "type": "int",
+          "index": "2",
+          "name": "ProductCategoryID",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "3",
+          "name": "Name",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "4",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "5",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "38",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.ProductSubcategory"
+    },
+    "seed.AdventureWorks2017.ScrapReason": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "ScrapReason",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "ScrapReasonID": {
+          "type": "smallint",
+          "index": "1",
+          "name": "ScrapReasonID",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "Name",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "3",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "16",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.ScrapReason"
+    },
+    "model.AdventureWorks2017.TransactionHistory": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "TransactionHistory",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "TransactionID": {
+          "type": "int",
+          "index": "1",
+          "name": "TransactionID",
+          "comment": null
+        },
+        "ProductID": {
+          "type": "int",
+          "index": "2",
+          "name": "ProductID",
+          "comment": null
+        },
+        "ReferenceOrderID": {
+          "type": "int",
+          "index": "3",
+          "name": "ReferenceOrderID",
+          "comment": null
+        },
+        "ReferenceOrderLineID": {
+          "type": "int",
+          "index": "4",
+          "name": "ReferenceOrderLineID",
+          "comment": null
+        },
+        "TransactionDate": {
+          "type": "datetime",
+          "index": "5",
+          "name": "TransactionDate",
+          "comment": null
+        },
+        "TransactionType": {
+          "type": "nchar",
+          "index": "6",
+          "name": "TransactionType",
+          "comment": null
+        },
+        "Quantity": {
+          "type": "int",
+          "index": "7",
+          "name": "Quantity",
+          "comment": null
+        },
+        "ActualCost": {
+          "type": "money",
+          "index": "8",
+          "name": "ActualCost",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "9",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "113443",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 6440,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.TransactionHistory"
+    },
+    "seed.AdventureWorks2017.UnitMeasure": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "UnitMeasure",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "UnitMeasureCode": {
+          "type": "nchar",
+          "index": "1",
+          "name": "UnitMeasureCode",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "Name",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "3",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "38",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.UnitMeasure"
+    },
+    "model.AdventureWorks2017.WorkOrder": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "WorkOrder",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "WorkOrderID": {
+          "type": "int",
+          "index": "1",
+          "name": "WorkOrderID",
+          "comment": null
+        },
+        "ProductID": {
+          "type": "int",
+          "index": "2",
+          "name": "ProductID",
+          "comment": null
+        },
+        "OrderQty": {
+          "type": "int",
+          "index": "3",
+          "name": "OrderQty",
+          "comment": null
+        },
+        "StockedQty": {
+          "type": "int",
+          "index": "4",
+          "name": "StockedQty",
+          "comment": null
+        },
+        "ScrappedQty": {
+          "type": "smallint",
+          "index": "5",
+          "name": "ScrappedQty",
+          "comment": null
+        },
+        "StartDate": {
+          "type": "datetime",
+          "index": "6",
+          "name": "StartDate",
+          "comment": null
+        },
+        "EndDate": {
+          "type": "datetime",
+          "index": "7",
+          "name": "EndDate",
+          "comment": null
+        },
+        "DueDate": {
+          "type": "datetime",
+          "index": "8",
+          "name": "DueDate",
+          "comment": null
+        },
+        "ScrapReasonID": {
+          "type": "smallint",
+          "index": "9",
+          "name": "ScrapReasonID",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "10",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "72591",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 4304,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.WorkOrder"
+    },
+    "model.AdventureWorks2017.WorkOrderRouting": {
+      "metadata": {
+        "type": "table",
+        "schema": "Production",
+        "name": "WorkOrderRouting",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "WorkOrderID": {
+          "type": "int",
+          "index": "1",
+          "name": "WorkOrderID",
+          "comment": null
+        },
+        "ProductID": {
+          "type": "int",
+          "index": "2",
+          "name": "ProductID",
+          "comment": null
+        },
+        "OperationSequence": {
+          "type": "smallint",
+          "index": "3",
+          "name": "OperationSequence",
+          "comment": null
+        },
+        "LocationID": {
+          "type": "smallint",
+          "index": "4",
+          "name": "LocationID",
+          "comment": null
+        },
+        "ScheduledStartDate": {
+          "type": "datetime",
+          "index": "5",
+          "name": "ScheduledStartDate",
+          "comment": null
+        },
+        "ScheduledEndDate": {
+          "type": "datetime",
+          "index": "6",
+          "name": "ScheduledEndDate",
+          "comment": null
+        },
+        "ActualStartDate": {
+          "type": "datetime",
+          "index": "7",
+          "name": "ActualStartDate",
+          "comment": null
+        },
+        "ActualEndDate": {
+          "type": "datetime",
+          "index": "8",
+          "name": "ActualEndDate",
+          "comment": null
+        },
+        "ActualResourceHrs": {
+          "type": "decimal",
+          "index": "9",
+          "name": "ActualResourceHrs",
+          "comment": null
+        },
+        "PlannedCost": {
+          "type": "money",
+          "index": "10",
+          "name": "PlannedCost",
+          "comment": null
+        },
+        "ActualCost": {
+          "type": "money",
+          "index": "11",
+          "name": "ActualCost",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "12",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "67131",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 5688,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.WorkOrderRouting"
+    },
+    "model.AdventureWorks2017.ProductVendor": {
+      "metadata": {
+        "type": "table",
+        "schema": "Purchasing",
+        "name": "ProductVendor",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "ProductID": {
+          "type": "int",
+          "index": "1",
+          "name": "ProductID",
+          "comment": null
+        },
+        "BusinessEntityID": {
+          "type": "int",
+          "index": "2",
+          "name": "BusinessEntityID",
+          "comment": null
+        },
+        "AverageLeadTime": {
+          "type": "int",
+          "index": "3",
+          "name": "AverageLeadTime",
+          "comment": null
+        },
+        "StandardPrice": {
+          "type": "money",
+          "index": "4",
+          "name": "StandardPrice",
+          "comment": null
+        },
+        "LastReceiptCost": {
+          "type": "money",
+          "index": "5",
+          "name": "LastReceiptCost",
+          "comment": null
+        },
+        "LastReceiptDate": {
+          "type": "datetime",
+          "index": "6",
+          "name": "LastReceiptDate",
+          "comment": null
+        },
+        "MinOrderQty": {
+          "type": "int",
+          "index": "7",
+          "name": "MinOrderQty",
+          "comment": null
+        },
+        "MaxOrderQty": {
+          "type": "int",
+          "index": "8",
+          "name": "MaxOrderQty",
+          "comment": null
+        },
+        "OnOrderQty": {
+          "type": "int",
+          "index": "9",
+          "name": "OnOrderQty",
+          "comment": null
+        },
+        "UnitMeasureCode": {
+          "type": "nchar",
+          "index": "10",
+          "name": "UnitMeasureCode",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "11",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "460",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 56,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.ProductVendor"
+    },
+    "model.AdventureWorks2017.PurchaseOrderDetail": {
+      "metadata": {
+        "type": "table",
+        "schema": "Purchasing",
+        "name": "PurchaseOrderDetail",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "PurchaseOrderID": {
+          "type": "int",
+          "index": "1",
+          "name": "PurchaseOrderID",
+          "comment": null
+        },
+        "PurchaseOrderDetailID": {
+          "type": "int",
+          "index": "2",
+          "name": "PurchaseOrderDetailID",
+          "comment": null
+        },
+        "DueDate": {
+          "type": "datetime",
+          "index": "3",
+          "name": "DueDate",
+          "comment": null
+        },
+        "OrderQty": {
+          "type": "smallint",
+          "index": "4",
+          "name": "OrderQty",
+          "comment": null
+        },
+        "ProductID": {
+          "type": "int",
+          "index": "5",
+          "name": "ProductID",
+          "comment": null
+        },
+        "UnitPrice": {
+          "type": "money",
+          "index": "6",
+          "name": "UnitPrice",
+          "comment": null
+        },
+        "LineTotal": {
+          "type": "money",
+          "index": "7",
+          "name": "LineTotal",
+          "comment": null
+        },
+        "ReceivedQty": {
+          "type": "decimal",
+          "index": "8",
+          "name": "ReceivedQty",
+          "comment": null
+        },
+        "RejectedQty": {
+          "type": "decimal",
+          "index": "9",
+          "name": "RejectedQty",
+          "comment": null
+        },
+        "StockedQty": {
+          "type": "decimal",
+          "index": "10",
+          "name": "StockedQty",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "11",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "8845",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 528,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.PurchaseOrderDetail"
+    },
+    "model.AdventureWorks2017.PurchaseOrderHeader": {
+      "metadata": {
+        "type": "table",
+        "schema": "Purchasing",
+        "name": "PurchaseOrderHeader",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "PurchaseOrderID": {
+          "type": "int",
+          "index": "1",
+          "name": "PurchaseOrderID",
+          "comment": null
+        },
+        "RevisionNumber": {
+          "type": "tinyint",
+          "index": "2",
+          "name": "RevisionNumber",
+          "comment": null
+        },
+        "Status": {
+          "type": "tinyint",
+          "index": "3",
+          "name": "Status",
+          "comment": null
+        },
+        "EmployeeID": {
+          "type": "int",
+          "index": "4",
+          "name": "EmployeeID",
+          "comment": null
+        },
+        "VendorID": {
+          "type": "int",
+          "index": "5",
+          "name": "VendorID",
+          "comment": null
+        },
+        "ShipMethodID": {
+          "type": "int",
+          "index": "6",
+          "name": "ShipMethodID",
+          "comment": null
+        },
+        "OrderDate": {
+          "type": "datetime",
+          "index": "7",
+          "name": "OrderDate",
+          "comment": null
+        },
+        "ShipDate": {
+          "type": "datetime",
+          "index": "8",
+          "name": "ShipDate",
+          "comment": null
+        },
+        "SubTotal": {
+          "type": "money",
+          "index": "9",
+          "name": "SubTotal",
+          "comment": null
+        },
+        "TaxAmt": {
+          "type": "money",
+          "index": "10",
+          "name": "TaxAmt",
+          "comment": null
+        },
+        "Freight": {
+          "type": "money",
+          "index": "11",
+          "name": "Freight",
+          "comment": null
+        },
+        "TotalDue": {
+          "type": "money",
+          "index": "12",
+          "name": "TotalDue",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "13",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "4012",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 352,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.PurchaseOrderHeader"
+    },
+    "seed.AdventureWorks2017.ShipMethod": {
+      "metadata": {
+        "type": "table",
+        "schema": "Purchasing",
+        "name": "ShipMethod",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "ShipMethodID": {
+          "type": "int",
+          "index": "1",
+          "name": "ShipMethodID",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "Name",
+          "comment": null
+        },
+        "ShipBase": {
+          "type": "money",
+          "index": "3",
+          "name": "ShipBase",
+          "comment": null
+        },
+        "ShipRate": {
+          "type": "money",
+          "index": "4",
+          "name": "ShipRate",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "5",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "6",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "5",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.ShipMethod"
+    },
+    "model.AdventureWorks2017.Vendor": {
+      "metadata": {
+        "type": "table",
+        "schema": "Purchasing",
+        "name": "Vendor",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "BusinessEntityID": {
+          "type": "int",
+          "index": "1",
+          "name": "BusinessEntityID",
+          "comment": null
+        },
+        "AccountNumber": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "AccountNumber",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "3",
+          "name": "Name",
+          "comment": null
+        },
+        "CreditRating": {
+          "type": "tinyint",
+          "index": "4",
+          "name": "CreditRating",
+          "comment": null
+        },
+        "PreferredVendorStatus": {
+          "type": "bit",
+          "index": "5",
+          "name": "PreferredVendorStatus",
+          "comment": null
+        },
+        "ActiveFlag": {
+          "type": "bit",
+          "index": "6",
+          "name": "ActiveFlag",
+          "comment": null
+        },
+        "PurchasingWebServiceURL": {
+          "type": "nvarchar",
+          "index": "7",
+          "name": "PurchasingWebServiceURL",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "8",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "104",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 32,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.Vendor"
+    },
+    "model.AdventureWorks2017.CountryRegionCurrency": {
+      "metadata": {
+        "type": "table",
+        "schema": "Sales",
+        "name": "CountryRegionCurrency",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "CountryRegionCode": {
+          "type": "nvarchar",
+          "index": "1",
+          "name": "CountryRegionCode",
+          "comment": null
+        },
+        "CurrencyCode": {
+          "type": "nchar",
+          "index": "2",
+          "name": "CurrencyCode",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "3",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "110",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.CountryRegionCurrency"
+    },
+    "seed.AdventureWorks2017.CreditCard": {
+      "metadata": {
+        "type": "table",
+        "schema": "Sales",
+        "name": "CreditCard",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "CreditCardID": {
+          "type": "int",
+          "index": "1",
+          "name": "CreditCardID",
+          "comment": null
+        },
+        "CardType": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "CardType",
+          "comment": null
+        },
+        "CardNumber": {
+          "type": "nvarchar",
+          "index": "3",
+          "name": "CardNumber",
+          "comment": null
+        },
+        "ExpMonth": {
+          "type": "tinyint",
+          "index": "4",
+          "name": "ExpMonth",
+          "comment": null
+        },
+        "ExpYear": {
+          "type": "smallint",
+          "index": "5",
+          "name": "ExpYear",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "6",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "19118",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 1512,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.CreditCard"
+    },
+    "seed.AdventureWorks2017.Currency": {
+      "metadata": {
+        "type": "table",
+        "schema": "Sales",
+        "name": "Currency",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "CurrencyCode": {
+          "type": "nchar",
+          "index": "1",
+          "name": "CurrencyCode",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "Name",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "3",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "105",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.Currency"
+    },
+    "model.AdventureWorks2017.CurrencyRate": {
+      "metadata": {
+        "type": "table",
+        "schema": "Sales",
+        "name": "CurrencyRate",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "CurrencyRateID": {
+          "type": "int",
+          "index": "1",
+          "name": "CurrencyRateID",
+          "comment": null
+        },
+        "CurrencyRateDate": {
+          "type": "datetime",
+          "index": "2",
+          "name": "CurrencyRateDate",
+          "comment": null
+        },
+        "FromCurrencyCode": {
+          "type": "nchar",
+          "index": "3",
+          "name": "FromCurrencyCode",
+          "comment": null
+        },
+        "ToCurrencyCode": {
+          "type": "nchar",
+          "index": "4",
+          "name": "ToCurrencyCode",
+          "comment": null
+        },
+        "AverageRate": {
+          "type": "money",
+          "index": "5",
+          "name": "AverageRate",
+          "comment": null
+        },
+        "EndOfDayRate": {
+          "type": "money",
+          "index": "6",
+          "name": "EndOfDayRate",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "7",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "13566",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 784,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.CurrencyRate"
+    },
+    "model.AdventureWorks2017.Customer": {
+      "metadata": {
+        "type": "table",
+        "schema": "Sales",
+        "name": "Customer",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "CustomerID": {
+          "type": "int",
+          "index": "1",
+          "name": "CustomerID",
+          "comment": null
+        },
+        "PersonID": {
+          "type": "int",
+          "index": "2",
+          "name": "PersonID",
+          "comment": null
+        },
+        "StoreID": {
+          "type": "int",
+          "index": "3",
+          "name": "StoreID",
+          "comment": null
+        },
+        "TerritoryID": {
+          "type": "int",
+          "index": "4",
+          "name": "TerritoryID",
+          "comment": null
+        },
+        "AccountNumber": {
+          "type": "varchar",
+          "index": "5",
+          "name": "AccountNumber",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "6",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "7",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "20068",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 984,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.Customer"
+    },
+    "model.AdventureWorks2017.PersonCreditCard": {
+      "metadata": {
+        "type": "table",
+        "schema": "Sales",
+        "name": "PersonCreditCard",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "BusinessEntityID": {
+          "type": "int",
+          "index": "1",
+          "name": "BusinessEntityID",
+          "comment": null
+        },
+        "CreditCardID": {
+          "type": "int",
+          "index": "2",
+          "name": "CreditCardID",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "3",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "19118",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 496,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.PersonCreditCard"
+    },
+    "model.AdventureWorks2017.SalesOrderDetail": {
+      "metadata": {
+        "type": "table",
+        "schema": "Sales",
+        "name": "SalesOrderDetail",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "SalesOrderID": {
+          "type": "int",
+          "index": "1",
+          "name": "SalesOrderID",
+          "comment": null
+        },
+        "SalesOrderDetailID": {
+          "type": "int",
+          "index": "2",
+          "name": "SalesOrderDetailID",
+          "comment": null
+        },
+        "CarrierTrackingNumber": {
+          "type": "nvarchar",
+          "index": "3",
+          "name": "CarrierTrackingNumber",
+          "comment": null
+        },
+        "OrderQty": {
+          "type": "smallint",
+          "index": "4",
+          "name": "OrderQty",
+          "comment": null
+        },
+        "ProductID": {
+          "type": "int",
+          "index": "5",
+          "name": "ProductID",
+          "comment": null
+        },
+        "SpecialOfferID": {
+          "type": "int",
+          "index": "6",
+          "name": "SpecialOfferID",
+          "comment": null
+        },
+        "UnitPrice": {
+          "type": "money",
+          "index": "7",
+          "name": "UnitPrice",
+          "comment": null
+        },
+        "UnitPriceDiscount": {
+          "type": "money",
+          "index": "8",
+          "name": "UnitPriceDiscount",
+          "comment": null
+        },
+        "LineTotal": {
+          "type": "numeric",
+          "index": "9",
+          "name": "LineTotal",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "10",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "11",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "121317",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 10048,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.SalesOrderDetail"
+    },
+    "model.AdventureWorks2017.SalesOrderHeader": {
+      "metadata": {
+        "type": "table",
+        "schema": "Sales",
+        "name": "SalesOrderHeader",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "SalesOrderID": {
+          "type": "int",
+          "index": "1",
+          "name": "SalesOrderID",
+          "comment": null
+        },
+        "RevisionNumber": {
+          "type": "tinyint",
+          "index": "2",
+          "name": "RevisionNumber",
+          "comment": null
+        },
+        "OrderDate": {
+          "type": "datetime",
+          "index": "3",
+          "name": "OrderDate",
+          "comment": null
+        },
+        "DueDate": {
+          "type": "datetime",
+          "index": "4",
+          "name": "DueDate",
+          "comment": null
+        },
+        "ShipDate": {
+          "type": "datetime",
+          "index": "5",
+          "name": "ShipDate",
+          "comment": null
+        },
+        "Status": {
+          "type": "tinyint",
+          "index": "6",
+          "name": "Status",
+          "comment": null
+        },
+        "OnlineOrderFlag": {
+          "type": "bit",
+          "index": "7",
+          "name": "OnlineOrderFlag",
+          "comment": null
+        },
+        "SalesOrderNumber": {
+          "type": "nvarchar",
+          "index": "8",
+          "name": "SalesOrderNumber",
+          "comment": null
+        },
+        "PurchaseOrderNumber": {
+          "type": "nvarchar",
+          "index": "9",
+          "name": "PurchaseOrderNumber",
+          "comment": null
+        },
+        "AccountNumber": {
+          "type": "nvarchar",
+          "index": "10",
+          "name": "AccountNumber",
+          "comment": null
+        },
+        "CustomerID": {
+          "type": "int",
+          "index": "11",
+          "name": "CustomerID",
+          "comment": null
+        },
+        "SalesPersonID": {
+          "type": "int",
+          "index": "12",
+          "name": "SalesPersonID",
+          "comment": null
+        },
+        "TerritoryID": {
+          "type": "int",
+          "index": "13",
+          "name": "TerritoryID",
+          "comment": null
+        },
+        "BillToAddressID": {
+          "type": "int",
+          "index": "14",
+          "name": "BillToAddressID",
+          "comment": null
+        },
+        "ShipToAddressID": {
+          "type": "int",
+          "index": "15",
+          "name": "ShipToAddressID",
+          "comment": null
+        },
+        "ShipMethodID": {
+          "type": "int",
+          "index": "16",
+          "name": "ShipMethodID",
+          "comment": null
+        },
+        "CreditCardID": {
+          "type": "int",
+          "index": "17",
+          "name": "CreditCardID",
+          "comment": null
+        },
+        "CreditCardApprovalCode": {
+          "type": "varchar",
+          "index": "18",
+          "name": "CreditCardApprovalCode",
+          "comment": null
+        },
+        "CurrencyRateID": {
+          "type": "int",
+          "index": "19",
+          "name": "CurrencyRateID",
+          "comment": null
+        },
+        "SubTotal": {
+          "type": "money",
+          "index": "20",
+          "name": "SubTotal",
+          "comment": null
+        },
+        "TaxAmt": {
+          "type": "money",
+          "index": "21",
+          "name": "TaxAmt",
+          "comment": null
+        },
+        "Freight": {
+          "type": "money",
+          "index": "22",
+          "name": "Freight",
+          "comment": null
+        },
+        "TotalDue": {
+          "type": "money",
+          "index": "23",
+          "name": "TotalDue",
+          "comment": null
+        },
+        "Comment": {
+          "type": "nvarchar",
+          "index": "24",
+          "name": "Comment",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "25",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "26",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "31465",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 5576,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.SalesOrderHeader"
+    },
+    "model.AdventureWorks2017.SalesOrderHeaderSalesReason": {
+      "metadata": {
+        "type": "table",
+        "schema": "Sales",
+        "name": "SalesOrderHeaderSalesReason",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "SalesOrderID": {
+          "type": "int",
+          "index": "1",
+          "name": "SalesOrderID",
+          "comment": null
+        },
+        "SalesReasonID": {
+          "type": "int",
+          "index": "2",
+          "name": "SalesReasonID",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "3",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "27647",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 704,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.SalesOrderHeaderSalesReason"
+    },
+    "model.AdventureWorks2017.SalesPerson": {
+      "metadata": {
+        "type": "table",
+        "schema": "Sales",
+        "name": "SalesPerson",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "BusinessEntityID": {
+          "type": "int",
+          "index": "1",
+          "name": "BusinessEntityID",
+          "comment": null
+        },
+        "TerritoryID": {
+          "type": "int",
+          "index": "2",
+          "name": "TerritoryID",
+          "comment": null
+        },
+        "SalesQuota": {
+          "type": "money",
+          "index": "3",
+          "name": "SalesQuota",
+          "comment": null
+        },
+        "Bonus": {
+          "type": "money",
+          "index": "4",
+          "name": "Bonus",
+          "comment": null
+        },
+        "CommissionPct": {
+          "type": "smallmoney",
+          "index": "5",
+          "name": "CommissionPct",
+          "comment": null
+        },
+        "SalesYTD": {
+          "type": "money",
+          "index": "6",
+          "name": "SalesYTD",
+          "comment": null
+        },
+        "SalesLastYear": {
+          "type": "money",
+          "index": "7",
+          "name": "SalesLastYear",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "8",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "9",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "17",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.SalesPerson"
+    },
+    "model.AdventureWorks2017.SalesPersonQuotaHistory": {
+      "metadata": {
+        "type": "table",
+        "schema": "Sales",
+        "name": "SalesPersonQuotaHistory",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "BusinessEntityID": {
+          "type": "int",
+          "index": "1",
+          "name": "BusinessEntityID",
+          "comment": null
+        },
+        "QuotaDate": {
+          "type": "datetime",
+          "index": "2",
+          "name": "QuotaDate",
+          "comment": null
+        },
+        "SalesQuota": {
+          "type": "money",
+          "index": "3",
+          "name": "SalesQuota",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "4",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "5",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "163",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 32,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.SalesPersonQuotaHistory"
+    },
+    "seed.AdventureWorks2017.SalesReason": {
+      "metadata": {
+        "type": "table",
+        "schema": "Sales",
+        "name": "SalesReason",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "SalesReasonID": {
+          "type": "int",
+          "index": "1",
+          "name": "SalesReasonID",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "Name",
+          "comment": null
+        },
+        "ReasonType": {
+          "type": "nvarchar",
+          "index": "3",
+          "name": "ReasonType",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "4",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "10",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.SalesReason"
+    },
+    "model.AdventureWorks2017.SalesTaxRate": {
+      "metadata": {
+        "type": "table",
+        "schema": "Sales",
+        "name": "SalesTaxRate",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "SalesTaxRateID": {
+          "type": "int",
+          "index": "1",
+          "name": "SalesTaxRateID",
+          "comment": null
+        },
+        "StateProvinceID": {
+          "type": "int",
+          "index": "2",
+          "name": "StateProvinceID",
+          "comment": null
+        },
+        "TaxType": {
+          "type": "tinyint",
+          "index": "3",
+          "name": "TaxType",
+          "comment": null
+        },
+        "TaxRate": {
+          "type": "smallmoney",
+          "index": "4",
+          "name": "TaxRate",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "5",
+          "name": "Name",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "6",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "7",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "29",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.SalesTaxRate"
+    },
+    "model.AdventureWorks2017.SalesTerritory": {
+      "metadata": {
+        "type": "table",
+        "schema": "Sales",
+        "name": "SalesTerritory",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "TerritoryID": {
+          "type": "int",
+          "index": "1",
+          "name": "TerritoryID",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "Name",
+          "comment": null
+        },
+        "CountryRegionCode": {
+          "type": "nvarchar",
+          "index": "3",
+          "name": "CountryRegionCode",
+          "comment": null
+        },
+        "Group": {
+          "type": "nvarchar",
+          "index": "4",
+          "name": "Group",
+          "comment": null
+        },
+        "SalesYTD": {
+          "type": "money",
+          "index": "5",
+          "name": "SalesYTD",
+          "comment": null
+        },
+        "SalesLastYear": {
+          "type": "money",
+          "index": "6",
+          "name": "SalesLastYear",
+          "comment": null
+        },
+        "CostYTD": {
+          "type": "money",
+          "index": "7",
+          "name": "CostYTD",
+          "comment": null
+        },
+        "CostLastYear": {
+          "type": "money",
+          "index": "8",
+          "name": "CostLastYear",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "9",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "10",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "11",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.SalesTerritory"
+    },
+    "model.AdventureWorks2017.SalesTerritoryHistory": {
+      "metadata": {
+        "type": "table",
+        "schema": "Sales",
+        "name": "SalesTerritoryHistory",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "BusinessEntityID": {
+          "type": "int",
+          "index": "1",
+          "name": "BusinessEntityID",
+          "comment": null
+        },
+        "TerritoryID": {
+          "type": "int",
+          "index": "2",
+          "name": "TerritoryID",
+          "comment": null
+        },
+        "StartDate": {
+          "type": "datetime",
+          "index": "3",
+          "name": "StartDate",
+          "comment": null
+        },
+        "EndDate": {
+          "type": "datetime",
+          "index": "4",
+          "name": "EndDate",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "5",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "6",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "17",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.SalesTerritoryHistory"
+    },
+    "model.AdventureWorks2017.ShoppingCartItem": {
+      "metadata": {
+        "type": "table",
+        "schema": "Sales",
+        "name": "ShoppingCartItem",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "ShoppingCartItemID": {
+          "type": "int",
+          "index": "1",
+          "name": "ShoppingCartItemID",
+          "comment": null
+        },
+        "ShoppingCartID": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "ShoppingCartID",
+          "comment": null
+        },
+        "Quantity": {
+          "type": "int",
+          "index": "3",
+          "name": "Quantity",
+          "comment": null
+        },
+        "ProductID": {
+          "type": "int",
+          "index": "4",
+          "name": "ProductID",
+          "comment": null
+        },
+        "DateCreated": {
+          "type": "datetime",
+          "index": "5",
+          "name": "DateCreated",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "6",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "3",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.ShoppingCartItem"
+    },
+    "seed.AdventureWorks2017.SpecialOffer": {
+      "metadata": {
+        "type": "table",
+        "schema": "Sales",
+        "name": "SpecialOffer",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "SpecialOfferID": {
+          "type": "int",
+          "index": "1",
+          "name": "SpecialOfferID",
+          "comment": null
+        },
+        "Description": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "Description",
+          "comment": null
+        },
+        "DiscountPct": {
+          "type": "smallmoney",
+          "index": "3",
+          "name": "DiscountPct",
+          "comment": null
+        },
+        "Type": {
+          "type": "nvarchar",
+          "index": "4",
+          "name": "Type",
+          "comment": null
+        },
+        "Category": {
+          "type": "nvarchar",
+          "index": "5",
+          "name": "Category",
+          "comment": null
+        },
+        "StartDate": {
+          "type": "datetime",
+          "index": "6",
+          "name": "StartDate",
+          "comment": null
+        },
+        "EndDate": {
+          "type": "datetime",
+          "index": "7",
+          "name": "EndDate",
+          "comment": null
+        },
+        "MinQty": {
+          "type": "int",
+          "index": "8",
+          "name": "MinQty",
+          "comment": null
+        },
+        "MaxQty": {
+          "type": "int",
+          "index": "9",
+          "name": "MaxQty",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "10",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "11",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "16",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 16,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "seed.AdventureWorks2017.SpecialOffer"
+    },
+    "model.AdventureWorks2017.SpecialOfferProduct": {
+      "metadata": {
+        "type": "table",
+        "schema": "Sales",
+        "name": "SpecialOfferProduct",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "SpecialOfferID": {
+          "type": "int",
+          "index": "1",
+          "name": "SpecialOfferID",
+          "comment": null
+        },
+        "ProductID": {
+          "type": "int",
+          "index": "2",
+          "name": "ProductID",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "3",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "4",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "538",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 40,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.SpecialOfferProduct"
+    },
+    "model.AdventureWorks2017.Store": {
+      "metadata": {
+        "type": "table",
+        "schema": "Sales",
+        "name": "Store",
+        "database": "AdventureWorks2017",
+        "comment": null,
+        "owner": null
+      },
+      "columns": {
+        "BusinessEntityID": {
+          "type": "int",
+          "index": "1",
+          "name": "BusinessEntityID",
+          "comment": null
+        },
+        "Name": {
+          "type": "nvarchar",
+          "index": "2",
+          "name": "Name",
+          "comment": null
+        },
+        "SalesPersonID": {
+          "type": "int",
+          "index": "3",
+          "name": "SalesPersonID",
+          "comment": null
+        },
+        "Demographics": {
+          "type": "xml",
+          "index": "4",
+          "name": "Demographics",
+          "comment": null
+        },
+        "rowguid": {
+          "type": "uniqueidentifier",
+          "index": "5",
+          "name": "rowguid",
+          "comment": null
+        },
+        "ModifiedDate": {
+          "type": "datetime",
+          "index": "6",
+          "name": "ModifiedDate",
+          "comment": null
+        }
+      },
+      "stats": {
+        "num_rows": {
+          "id": "num_rows",
+          "label": "# Rows",
+          "value": "701",
+          "include": true,
+          "description": "Approximate count of rows in this table"
+        },
+        "num_bytes": {
+          "id": "num_bytes",
+          "label": "Approximate Size",
+          "value": 824,
+          "include": true,
+          "description": "Approximate size of table as reported by SQL Server"
+        },
+        "has_stats": {
+          "id": "has_stats",
+          "label": "Has Stats?",
+          "value": true,
+          "include": true,
+          "description": "Indicates whether there are statistics for this table"
+        }
+      },
+      "unique_id": "model.AdventureWorks2017.Store"
+    }
+  },
+  "sources": {}
+}

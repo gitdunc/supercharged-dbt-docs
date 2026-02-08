@@ -1,0 +1,83 @@
+{
+  "label": "2026-02-03-pm",
+  "timestamp": "2026-02-03T20:00:00.000Z",
+  "transactionTargetTableCount": 12,
+  "referenceTargetTableCount": 4,
+  "updatedTransactionTables": 12,
+  "updatedReferenceTables": 0,
+  "schemaEvents": [],
+  "rowCountChanges": [
+    {
+      "unique_id": "model.AdventureWorks2017.EmailAddress",
+      "previous": 19972,
+      "current": 20671,
+      "delta": 699
+    },
+    {
+      "unique_id": "model.AdventureWorks2017.Customer",
+      "previous": 19820,
+      "current": 20514,
+      "delta": 694
+    },
+    {
+      "unique_id": "model.AdventureWorks2017.Address",
+      "previous": 19614,
+      "current": 20300,
+      "delta": 686
+    },
+    {
+      "unique_id": "model.AdventureWorks2017.BusinessEntityAddress",
+      "previous": 19614,
+      "current": 20300,
+      "delta": 686
+    },
+    {
+      "unique_id": "model.AdventureWorks2017.BillOfMaterials",
+      "previous": 2679,
+      "current": 2773,
+      "delta": 94
+    },
+    {
+      "unique_id": "model.AdventureWorks2017.BusinessEntityContact",
+      "previous": 909,
+      "current": 941,
+      "delta": 32
+    },
+    {
+      "unique_id": "model.AdventureWorks2017.EmployeePayHistory",
+      "previous": 316,
+      "current": 327,
+      "delta": 11
+    },
+    {
+      "unique_id": "model.AdventureWorks2017.Employee",
+      "previous": 290,
+      "current": 300,
+      "delta": 10
+    },
+    {
+      "unique_id": "model.AdventureWorks2017.EmployeeDepartmentHistory",
+      "previous": 296,
+      "current": 306,
+      "delta": 10
+    },
+    {
+      "unique_id": "model.AdventureWorks2017.CountryRegionCurrency",
+      "previous": 109,
+      "current": 113,
+      "delta": 4
+    },
+    {
+      "unique_id": "model.AdventureWorks2017.JobCandidate",
+      "previous": 13,
+      "current": 14,
+      "delta": 1
+    },
+    {
+      "unique_id": "model.AdventureWorks2017.Document",
+      "previous": 13,
+      "current": 14,
+      "delta": 1
+    }
+  ]
+}

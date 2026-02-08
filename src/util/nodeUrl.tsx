@@ -1,15 +1,21 @@
-export function getShortID(id: string) {
-  // allow 200 characters for the file name
-  if (id.length <= 230) {
-    return id;
+export function getShortID(id: string | null | undefined) {
+  const safeId = typeof id === "string" ? id : "";
+  if (!safeId) {
+    return "";
   }
-  const safe = id.slice(0, 200);
-  const end = id.slice(200);
+  // allow 200 characters for the file name
+  if (safeId.length <= 230) {
+    return safeId;
+  }
+  const safe = safeId.slice(0, 200);
+  const end = safeId.slice(200);
   return safe + "." + cyrb53(end);
 }
 
 export function getNodeUrl(node: any) {
-  return "/" + node.resource_type + "/" + node.unique_id + "/";
+  const resourceType = node?.resource_type || "node";
+  const uniqueId = node?.unique_id || "";
+  return "/" + resourceType + "/" + uniqueId + "/";
 }
 
 function cyrb53(str: string, seed: number = 0) {

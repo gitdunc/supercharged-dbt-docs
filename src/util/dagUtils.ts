@@ -97,5 +97,11 @@ export function getMacroParents(project: any, self: any) {
 }
 
 function mapToShortIds(arr: string[]) {
-  return arr.map((id) => getShortID(id));
+  if (!Array.isArray(arr)) {
+    return [];
+  }
+  return arr
+    .filter((id): id is string => typeof id === "string" && id.trim().length > 0)
+    .map((id) => getShortID(id))
+    .filter((id) => id.length > 0);
 }

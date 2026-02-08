@@ -14,4 +14,5 @@ export async function GET() {
   return NextResponse.json(tree);
 }
 
-export const revalidate = Infinity;
+// For static export compatibility set `revalidate` to a non-ISR value
+export const revalidate = false;

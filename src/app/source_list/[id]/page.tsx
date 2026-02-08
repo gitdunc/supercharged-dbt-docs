@@ -79,7 +79,7 @@ export default async function SourceListPage({
             <div className="app-frame app-pad app-flush-bottom">
               <h1>
                 <span className="break">{model.name}</span>
-                <small>source</small>
+                <small>source data</small>
               </h1>
             </div>
           </div>
@@ -92,7 +92,7 @@ export default async function SourceListPage({
                 <a href="#description">Description</a>
               </li>
               <li>
-                <a href="#sources">Sources</a>
+                <a href="#sources">Source Data</a>
               </li>
             </ul>
           </div>
@@ -123,7 +123,7 @@ export default async function SourceListPage({
             <section className="section">
               <div className="section-target" id="sources"></div>
               <div className="section-content">
-                <h6>Source Tables</h6>
+                <h6>Source Data Tables</h6>
                 <div className="panel">
                   <div className="panel-body">
                     {!_.isEmpty(model.sources) ? (

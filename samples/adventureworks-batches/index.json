@@ -1,0 +1,56 @@
+{
+  "generated_at": "2026-02-07T21:06:40.310Z",
+  "description": "AdventureWorks AM/PM batch simulation for lineage + observability demos.",
+  "start_date": "2026-02-03",
+  "days": 3,
+  "batches": [
+    {
+      "label": "2026-02-03-am",
+      "path": "samples/adventureworks-batches/2026-02-03-am",
+      "timestamp": "2026-02-03T08:00:00.000Z",
+      "updatedTransactionTables": 12,
+      "updatedReferenceTables": 4,
+      "schemaEvents": 0
+    },
+    {
+      "label": "2026-02-03-pm",
+      "path": "samples/adventureworks-batches/2026-02-03-pm",
+      "timestamp": "2026-02-03T20:00:00.000Z",
+      "updatedTransactionTables": 12,
+      "updatedReferenceTables": 0,
+      "schemaEvents": 0
+    },
+    {
+      "label": "2026-02-04-am",
+      "path": "samples/adventureworks-batches/2026-02-04-am",
+      "timestamp": "2026-02-04T08:00:00.000Z",
+      "updatedTransactionTables": 12,
+      "updatedReferenceTables": 0,
+      "schemaEvents": 0
+    },
+    {
+      "label": "2026-02-04-pm",
+      "path": "samples/adventureworks-batches/2026-02-04-pm",
+      "timestamp": "2026-02-04T20:00:00.000Z",
+      "updatedTransactionTables": 12,
+      "updatedReferenceTables": 0,
+      "schemaEvents": 1
+    },
+    {
+      "label": "2026-02-05-am",
+      "path": "samples/adventureworks-batches/2026-02-05-am",
+      "timestamp": "2026-02-05T08:00:00.000Z",
+      "updatedTransactionTables": 12,
+      "updatedReferenceTables": 4,
+      "schemaEvents": 1
+    },
+    {
+      "label": "2026-02-05-pm",
+      "path": "samples/adventureworks-batches/2026-02-05-pm",
+      "timestamp": "2026-02-05T20:00:00.000Z",
+      "updatedTransactionTables": 12,
+      "updatedReferenceTables": 0,
+      "schemaEvents": 0
+    }
+  ]
+}
