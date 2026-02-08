@@ -256,6 +256,21 @@ imports are found:
 npm run audit:deps:strict
 ```
 
+## Ownership Assignment (AdventureWorks)
+
+To apply governance owner metadata across all AdventureWorks artifacts (root plus simulated snapshots):
+
+```bash
+npm run apply:owners
+```
+
+What it updates:
+
+- `manifest*.json`: `meta.owner`, `meta.owner_domain`, and `config.owner` (when config exists)
+- `catalog*.json`: `metadata.owner`, `metadata.owner_domain`
+
+The assignment uses domain heuristics (Sales, HR, Procurement, Manufacturing, Master Data, Data Quality, Platform) and avoids personal-name ownership in public sample artifacts.
+
 ## References
 
 - [dbt Docs: Getting Started with Data Lineage](https://www.getdbt.com/blog/getting-started-with-data-lineage)

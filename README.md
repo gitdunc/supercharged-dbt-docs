@@ -25,10 +25,75 @@ The home page includes a horizontal persona switcher used for readability and re
 
 To keep governance language consistent:
 
-- `model` is shown as **Data In Motion**
+- `model` is shown as **Data In Motion (Activity)**
+- `snapshot` is shown as **Data In Motion (Snapshot)**
 - `seed` is shown as **Landed Data**
+- `source` is shown as **Source Data**
+- `macro` is shown as **Routine** (plural: **Routines**)
 
 These labels are centralized in `src/util/resourceLabels.ts` and reused across search/reference and DAG metadata views.
+
+## Governance Documentation Pack
+
+To align this project with DAMA-style governance capabilities, the repository includes a focused governance doc set:
+
+- `docs/governance/README.md`
+- `docs/governance/data-ownership.md`
+- `docs/governance/data-security.md`
+- `docs/governance/data-classification.md`
+- `docs/governance/data-glossary.md`
+- `docs/governance/metadata-management.md`
+- `docs/governance/data-quality-observability.md`
+- `docs/governance/lineage-impact.md`
+
+### DAMA Wheel Context
+
+This governance pack follows DAMA-DMBOK capability themes (commonly represented as the DAMA wheel) for practical implementation guidance in a lightweight engineering workflow.
+
+Citation: DAMA International, *DAMA-DMBOK2* (Data Management Body of Knowledge, 2nd Edition).
+
+## Data Ownership Bootstrap (AdventureWorks)
+
+AdventureWorks sample artifacts support role-based owner assignment (no personal names required).
+Object ownership is assigned by domain heuristics (Sales, HR, Procurement, Manufacturing, Master Data, Data Quality, Platform).
+
+Run this after regenerating dbt artifacts:
+
+```bash
+npm run apply:owners
+```
+
+This updates all `manifest*.json` and `catalog*.json` files in the repository, including simulation snapshots.
+
+### Ownership Best Practice
+
+- Object owner: accountable business/domain owner for the data asset.
+- Field steward: may differ from object owner for shared fields (for example, `employee_id` stewarded by HR in a Sales-owned object).
+- This repository currently automates object ownership and documents field-level stewardship as a recommended extension.
+
+## Data Classification Standard
+
+This repository uses a four-level classification model:
+
+- `public`
+- `internal`
+- `sensitive`
+- `regulated`
+
+Column-level metadata is used for governance automation and UI display:
+
+- `meta.data_classification`
+- `meta.protected_information` (PI)
+- `meta.personal_data` (PD)
+- `meta.personally_identifiable_information` (PII)
+- `meta.regulated_data`
+- `meta.hipaa_applicable`
+
+Notes:
+
+- `PI` (Protected Information) is broader than `PII`.
+- `PD` (Personal Data) is broader than direct identifiers and may include indirectly identifying attributes.
+- AdventureWorks sample data is fictional; default policy in this repo is `hipaa:none` unless explicitly mapped by adopters.
 
 ## Credits
 
@@ -75,11 +140,15 @@ This implementation is designed as a **multi-layer, persona-driven caching syste
 **Use Case**: Production support responds immediately to incidents - anomalies, errors, unexpected changes
 
 - **3 Broad Tests** (inspired by Monte Carlo's observability framework):
-  1. **Freshness**: Is the table updating on schedule?
-  2. **Volume**: Are record counts within expected ranges?
-  3. **Quality**: Are there unexpected changes (nulls, schemas, invalid values)?
+  1. **Schema Drift**: Did structure or type unexpectedly change?
+  2. **Completeness (Volume)**: Are record counts within expected ranges?
+  3. **Recency (Freshness)**: Is the table updating on schedule?
 
-- **Update Cadence**: Continuous or on-demand when anomalies detected
+- **Operational Weighting**:
+  - Broad tests represent ~70% of data downtime incidents.
+  - Narrow tests (nullability, referential integrity, data typing) represent ~20%.
+  - User-defined business tests represent ~10%.
+- **Update Cadence**: Hot path runs about every 30 minutes and additionally on warning/failure events.
 - **Caching**: Short-lived, computed on-demand, cached only while support is investigating (5-10 minute TTL)
 - **Implementation**: Error counts, test failures, anomaly flags tracked at column/table level in metadata
 

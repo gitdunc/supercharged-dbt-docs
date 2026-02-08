@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useMemo, useCallback } from "react";
+import React, { useEffect, useState, useMemo, useCallback, useRef } from "react";
 import dynamic from "next/dynamic";
 import { useDAG } from "@/hooks/useDAG";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -217,6 +217,8 @@ export default function DagViewer({
   const [depthFilter, setDepthFilter] = useState<DepthFilter>("all");
   const [selectedNode, setSelectedNode] = useState<any | null>(null);
   const [network, setNetwork] = useState<any | null>(null);
+  const [isCanvasDragging, setIsCanvasDragging] = useState(false);
+  const graphViewportRef = useRef<HTMLDivElement | null>(null);
 
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -482,6 +484,14 @@ export default function DagViewer({
     return { levelSeparation, nodeSpacing, treeSpacing };
   }, [filteredGraph.nodes]);
 
+  const graphSurface = useMemo(() => {
+    const nodeCount = filteredGraph.nodes.length;
+    return {
+      width: Math.max(1800, Math.min(5200, 1200 + nodeCount * 95)),
+      height: Math.max(1100, Math.min(3600, 760 + nodeCount * 55)),
+    };
+  }, [filteredGraph.nodes.length]);
+
   const zoomGraph = useCallback(
     (factor: number) => {
       if (!network) return;
@@ -545,6 +555,13 @@ export default function DagViewer({
       // no-op
     }
   }, [network, renderGraph, filteredGraph, fitGraphView]);
+
+  useEffect(() => {
+    const viewport = graphViewportRef.current;
+    if (!viewport) return;
+    viewport.scrollLeft = Math.max(0, (viewport.scrollWidth - viewport.clientWidth) / 2);
+    viewport.scrollTop = Math.max(0, (viewport.scrollHeight - viewport.clientHeight) / 2);
+  }, [graphKey]);
 
   const options = useMemo(
     () => ({
@@ -873,16 +890,43 @@ export default function DagViewer({
 
         <div style={{ flex: 1, minHeight: 0 }}>
           {renderGraph ? (
-            <AnyGraph
-              key={graphKey}
-              graph={{
-                nodes: styledNodes,
-                edges: filteredGraph.edges,
+            <div
+              ref={graphViewportRef}
+              style={{
+                width: "100%",
+                height: "100%",
+                overflowX: "auto",
+                overflowY: "auto",
+                border: "1px solid rgba(0, 30, 60, 0.075)",
+                borderRadius: "4px",
               }}
-              options={options}
-              events={events}
-              getNetwork={(net: any) => setNetwork(net)}
-            />
+            >
+              <div
+                style={{
+                  width: `${graphSurface.width}px`,
+                  height: `${graphSurface.height}px`,
+                  minWidth: "100%",
+                  minHeight: "100%",
+                  cursor: isCanvasDragging ? "grabbing" : "grab",
+                }}
+                onMouseDown={(event) => {
+                  if (event.button === 0) setIsCanvasDragging(true);
+                }}
+                onMouseUp={() => setIsCanvasDragging(false)}
+                onMouseLeave={() => setIsCanvasDragging(false)}
+              >
+                <AnyGraph
+                  key={graphKey}
+                  graph={{
+                    nodes: styledNodes,
+                    edges: filteredGraph.edges,
+                  }}
+                  options={options}
+                  events={events}
+                  getNetwork={(net: any) => setNetwork(net)}
+                />
+              </div>
+            </div>
           ) : null}
         </div>
 

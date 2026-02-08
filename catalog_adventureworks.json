@@ -14,7 +14,8 @@
         "name": "Department",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Human Resources Data Owner",
+        "owner_domain": "Human Resources"
       },
       "columns": {
         "DepartmentID": {
@@ -74,7 +75,8 @@
         "name": "Employee",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Human Resources Data Owner",
+        "owner_domain": "Human Resources"
       },
       "columns": {
         "BusinessEntityID": {
@@ -206,7 +208,8 @@
         "name": "EmployeeDepartmentHistory",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Human Resources Data Owner",
+        "owner_domain": "Human Resources"
       },
       "columns": {
         "BusinessEntityID": {
@@ -278,7 +281,8 @@
         "name": "EmployeePayHistory",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Human Resources Data Owner",
+        "owner_domain": "Human Resources"
       },
       "columns": {
         "BusinessEntityID": {
@@ -344,7 +348,8 @@
         "name": "JobCandidate",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Human Resources Data Owner",
+        "owner_domain": "Human Resources"
       },
       "columns": {
         "JobCandidateID": {
@@ -404,7 +409,8 @@
         "name": "Shift",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Human Resources Data Owner",
+        "owner_domain": "Human Resources"
       },
       "columns": {
         "ShiftID": {
@@ -470,7 +476,8 @@
         "name": "Address",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Master Data Owner",
+        "owner_domain": "Master Data"
       },
       "columns": {
         "AddressID": {
@@ -566,7 +573,8 @@
         "name": "AddressType",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Master Data Owner",
+        "owner_domain": "Master Data"
       },
       "columns": {
         "AddressTypeID": {
@@ -626,7 +634,8 @@
         "name": "BusinessEntity",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Master Data Owner",
+        "owner_domain": "Master Data"
       },
       "columns": {
         "BusinessEntityID": {
@@ -680,7 +689,8 @@
         "name": "BusinessEntityAddress",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Master Data Owner",
+        "owner_domain": "Master Data"
       },
       "columns": {
         "BusinessEntityID": {
@@ -746,7 +756,8 @@
         "name": "BusinessEntityContact",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Master Data Owner",
+        "owner_domain": "Master Data"
       },
       "columns": {
         "BusinessEntityID": {
@@ -812,7 +823,8 @@
         "name": "ContactType",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Master Data Owner",
+        "owner_domain": "Master Data"
       },
       "columns": {
         "ContactTypeID": {
@@ -866,7 +878,8 @@
         "name": "CountryRegion",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Master Data Owner",
+        "owner_domain": "Master Data"
       },
       "columns": {
         "CountryRegionCode": {
@@ -920,7 +933,8 @@
         "name": "EmailAddress",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Master Data Owner",
+        "owner_domain": "Master Data"
       },
       "columns": {
         "BusinessEntityID": {
@@ -986,7 +1000,8 @@
         "name": "Password",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Master Data Owner",
+        "owner_domain": "Master Data"
       },
       "columns": {
         "BusinessEntityID": {
@@ -1052,7 +1067,8 @@
         "name": "Person",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Master Data Owner",
+        "owner_domain": "Master Data"
       },
       "columns": {
         "BusinessEntityID": {
@@ -1166,7 +1182,8 @@
         "name": "PersonPhone",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Master Data Owner",
+        "owner_domain": "Master Data"
       },
       "columns": {
         "BusinessEntityID": {
@@ -1226,7 +1243,8 @@
         "name": "PhoneNumberType",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Master Data Owner",
+        "owner_domain": "Master Data"
       },
       "columns": {
         "PhoneNumberTypeID": {
@@ -1280,7 +1298,8 @@
         "name": "StateProvince",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Master Data Owner",
+        "owner_domain": "Master Data"
       },
       "columns": {
         "StateProvinceID": {
@@ -1364,7 +1383,8 @@
         "name": "BillOfMaterials",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "BillOfMaterialsID": {
@@ -1454,7 +1474,8 @@
         "name": "Culture",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "CultureID": {
@@ -1508,7 +1529,8 @@
         "name": "Document",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "DocumentNode": {
@@ -1628,7 +1650,8 @@
         "name": "Illustration",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "IllustrationID": {
@@ -1682,7 +1705,8 @@
         "name": "Location",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "LocationID": {
@@ -1748,7 +1772,8 @@
         "name": "Product",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "ProductID": {
@@ -1934,7 +1959,8 @@
         "name": "ProductCategory",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "ProductCategoryID": {
@@ -1994,7 +2020,8 @@
         "name": "ProductCostHistory",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "ProductID": {
@@ -2060,7 +2087,8 @@
         "name": "ProductDescription",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "ProductDescriptionID": {
@@ -2120,7 +2148,8 @@
         "name": "ProductDocument",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "ProductID": {
@@ -2174,7 +2203,8 @@
         "name": "ProductInventory",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "ProductID": {
@@ -2252,7 +2282,8 @@
         "name": "ProductListPriceHistory",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "ProductID": {
@@ -2318,7 +2349,8 @@
         "name": "ProductModel",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "ProductModelID": {
@@ -2390,7 +2422,8 @@
         "name": "ProductModelIllustration",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "ProductModelID": {
@@ -2444,7 +2477,8 @@
         "name": "ProductModelProductDescriptionCulture",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "ProductModelID": {
@@ -2504,7 +2538,8 @@
         "name": "ProductPhoto",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "ProductPhotoID": {
@@ -2576,7 +2611,8 @@
         "name": "ProductProductPhoto",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "ProductID": {
@@ -2636,7 +2672,8 @@
         "name": "ProductReview",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "ProductReviewID": {
@@ -2720,7 +2757,8 @@
         "name": "ProductSubcategory",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "ProductSubcategoryID": {
@@ -2786,7 +2824,8 @@
         "name": "ScrapReason",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "ScrapReasonID": {
@@ -2840,7 +2879,8 @@
         "name": "TransactionHistory",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "TransactionID": {
@@ -2930,7 +2970,8 @@
         "name": "UnitMeasure",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "UnitMeasureCode": {
@@ -2984,7 +3025,8 @@
         "name": "WorkOrder",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "WorkOrderID": {
@@ -3080,7 +3122,8 @@
         "name": "WorkOrderRouting",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Manufacturing Data Owner",
+        "owner_domain": "Manufacturing"
       },
       "columns": {
         "WorkOrderID": {
@@ -3188,7 +3231,8 @@
         "name": "ProductVendor",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Procurement Data Owner",
+        "owner_domain": "Procurement"
       },
       "columns": {
         "ProductID": {
@@ -3290,7 +3334,8 @@
         "name": "PurchaseOrderDetail",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Procurement Data Owner",
+        "owner_domain": "Procurement"
       },
       "columns": {
         "PurchaseOrderID": {
@@ -3392,7 +3437,8 @@
         "name": "PurchaseOrderHeader",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Procurement Data Owner",
+        "owner_domain": "Procurement"
       },
       "columns": {
         "PurchaseOrderID": {
@@ -3506,7 +3552,8 @@
         "name": "ShipMethod",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Procurement Data Owner",
+        "owner_domain": "Procurement"
       },
       "columns": {
         "ShipMethodID": {
@@ -3578,7 +3625,8 @@
         "name": "Vendor",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Procurement Data Owner",
+        "owner_domain": "Procurement"
       },
       "columns": {
         "BusinessEntityID": {
@@ -3662,7 +3710,8 @@
         "name": "CountryRegionCurrency",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Sales Data Owner",
+        "owner_domain": "Sales"
       },
       "columns": {
         "CountryRegionCode": {
@@ -3716,7 +3765,8 @@
         "name": "CreditCard",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Sales Data Owner",
+        "owner_domain": "Sales"
       },
       "columns": {
         "CreditCardID": {
@@ -3788,7 +3838,8 @@
         "name": "Currency",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Sales Data Owner",
+        "owner_domain": "Sales"
       },
       "columns": {
         "CurrencyCode": {
@@ -3842,7 +3893,8 @@
         "name": "CurrencyRate",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Sales Data Owner",
+        "owner_domain": "Sales"
       },
       "columns": {
         "CurrencyRateID": {
@@ -3920,7 +3972,8 @@
         "name": "Customer",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Sales Data Owner",
+        "owner_domain": "Sales"
       },
       "columns": {
         "CustomerID": {
@@ -3998,7 +4051,8 @@
         "name": "PersonCreditCard",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Sales Data Owner",
+        "owner_domain": "Sales"
       },
       "columns": {
         "BusinessEntityID": {
@@ -4052,7 +4106,8 @@
         "name": "SalesOrderDetail",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Sales Data Owner",
+        "owner_domain": "Sales"
       },
       "columns": {
         "SalesOrderID": {
@@ -4154,7 +4209,8 @@
         "name": "SalesOrderHeader",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Sales Data Owner",
+        "owner_domain": "Sales"
       },
       "columns": {
         "SalesOrderID": {
@@ -4346,7 +4402,8 @@
         "name": "SalesOrderHeaderSalesReason",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Sales Data Owner",
+        "owner_domain": "Sales"
       },
       "columns": {
         "SalesOrderID": {
@@ -4400,7 +4457,8 @@
         "name": "SalesPerson",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Sales Data Owner",
+        "owner_domain": "Sales"
       },
       "columns": {
         "BusinessEntityID": {
@@ -4490,7 +4548,8 @@
         "name": "SalesPersonQuotaHistory",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Sales Data Owner",
+        "owner_domain": "Sales"
       },
       "columns": {
         "BusinessEntityID": {
@@ -4556,7 +4615,8 @@
         "name": "SalesReason",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Sales Data Owner",
+        "owner_domain": "Sales"
       },
       "columns": {
         "SalesReasonID": {
@@ -4616,7 +4676,8 @@
         "name": "SalesTaxRate",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Sales Data Owner",
+        "owner_domain": "Sales"
       },
       "columns": {
         "SalesTaxRateID": {
@@ -4694,7 +4755,8 @@
         "name": "SalesTerritory",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Sales Data Owner",
+        "owner_domain": "Sales"
       },
       "columns": {
         "TerritoryID": {
@@ -4790,7 +4852,8 @@
         "name": "SalesTerritoryHistory",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Sales Data Owner",
+        "owner_domain": "Sales"
       },
       "columns": {
         "BusinessEntityID": {
@@ -4862,7 +4925,8 @@
         "name": "ShoppingCartItem",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Sales Data Owner",
+        "owner_domain": "Sales"
       },
       "columns": {
         "ShoppingCartItemID": {
@@ -4934,7 +4998,8 @@
         "name": "SpecialOffer",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Sales Data Owner",
+        "owner_domain": "Sales"
       },
       "columns": {
         "SpecialOfferID": {
@@ -5036,7 +5101,8 @@
         "name": "SpecialOfferProduct",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Sales Data Owner",
+        "owner_domain": "Sales"
       },
       "columns": {
         "SpecialOfferID": {
@@ -5096,7 +5162,8 @@
         "name": "Store",
         "database": "AdventureWorks2017",
         "comment": null,
-        "owner": null
+        "owner": "Sales Data Owner",
+        "owner_domain": "Sales"
       },
       "columns": {
         "BusinessEntityID": {

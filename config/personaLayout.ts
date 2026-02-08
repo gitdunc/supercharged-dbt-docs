@@ -84,9 +84,9 @@ export const PERSONA_VIEWS: PersonaView[] = [
 // If any selected persona is mapped to a section, that section remains visible.
 export const PERSONA_SECTION_VISIBILITY: Record<PersonaSectionKey, PersonaId[]> = {
   details: ["production_support", "data_engineering", "business_analyst"],
-  description: ["data_engineering", "business_analyst"],
+  description: ["business_analyst"],
   columns: ["data_engineering", "business_analyst"],
-  referenced_by: ["production_support", "data_engineering"],
+  referenced_by: ["production_support"],
   depends_on: ["production_support", "data_engineering"],
   code: ["data_engineering"],
   dag: ["production_support", "data_engineering"],

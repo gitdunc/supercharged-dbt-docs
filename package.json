@@ -13,6 +13,8 @@
     "test:dags": "npm run generate-dags && npm run validate-dags",
     "simulate:adventureworks": "node scripts/simulate-adventureworks-batches.js",
     "use:snapshot": "node scripts/use-snapshot.js",
+    "apply:owners": "node scripts/apply-adventureworks-ownership.js",
+    "apply:classification": "node scripts/tag-adventureworks-classification.js",
     "audit:deps": "node scripts/audit-dependencies.js",
     "audit:deps:strict": "node scripts/audit-dependencies.js --strict",
     "update-schemas": "concurrently 'quicktype -o src/schemas/manifest.ts -t manifest --src-lang schema https://schemas.getdbt.com/dbt/manifest/v6.json' 'quicktype -o src/schemas/catalog.ts -t catalog --src-lang schema https://schemas.getdbt.com/dbt/catalog/v1.json'",
