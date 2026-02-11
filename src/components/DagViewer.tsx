@@ -217,7 +217,6 @@ export default function DagViewer({
   const [depthFilter, setDepthFilter] = useState<DepthFilter>("all");
   const [selectedNode, setSelectedNode] = useState<any | null>(null);
   const [network, setNetwork] = useState<any | null>(null);
-  const [isCanvasDragging, setIsCanvasDragging] = useState(false);
   const graphViewportRef = useRef<HTMLDivElement | null>(null);
 
   const searchParams = useSearchParams();
@@ -584,7 +583,7 @@ export default function DagViewer({
         scaling: {
           min: 14,
           max: 36,
-          label: { min: 9, max: 24, drawThreshold: 0, maxVisible: 40 },
+          label: { min: 9, max: 24, drawThreshold: 7, maxVisible: 40 },
         },
         font: { size: 12, face: "Inter, Segoe UI, Helvetica, Arial, sans-serif" },
       },
@@ -597,7 +596,8 @@ export default function DagViewer({
       interaction: {
         navigationButtons: false,
         zoomView: true,
-        dragView: true,
+        dragView: false,
+        dragNodes: false,
         keyboard: {
           enabled: true,
           bindToWindow: false,
@@ -907,13 +907,7 @@ export default function DagViewer({
                   height: `${graphSurface.height}px`,
                   minWidth: "100%",
                   minHeight: "100%",
-                  cursor: isCanvasDragging ? "grabbing" : "grab",
                 }}
-                onMouseDown={(event) => {
-                  if (event.button === 0) setIsCanvasDragging(true);
-                }}
-                onMouseUp={() => setIsCanvasDragging(false)}
-                onMouseLeave={() => setIsCanvasDragging(false)}
               >
                 <AnyGraph
                   key={graphKey}
@@ -938,6 +932,7 @@ export default function DagViewer({
           {graphData.depth && (graphData.depth.upstream > 50 || graphData.depth.downstream > 50)
             ? " | Warning: graph truncated for performance."
             : ""}
+          {" | Drag-pan disabled. Use Zoom +/- , Autofit, and scrollbars."}
         </div>
       </div>
     </div>
